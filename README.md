@@ -6,14 +6,14 @@ Project Team
 <br>Developers: Amanda Chan, Claris Toh
 
 
-##Latest Changes 
+<h2>Latest Changes 
 
 
-##Project Background
+<h2>Project Background
 
 
-##Team's Approach
+<h2>Team's Approach
 
 
-##Diferent Requirements of the Assignment
+<h2>Diferent Requirements of the Assignment<br>
 
