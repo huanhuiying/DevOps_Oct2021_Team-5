@@ -15,5 +15,5 @@ Project Team
 <h2>Team's Approach
 
 
-<h2>Diferent Requirements of the Assignment<br>
+<h2>Different Requirements of the Assignment<br>
 
