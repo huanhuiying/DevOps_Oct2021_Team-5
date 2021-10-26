@@ -1,6 +1,6 @@
 # DevOps_Oct2021_Team-5
 
 Project Team
-Scrum master: Megan Png
-QA: Huan Hui Ying
-Developers: Amanda Chan, Claris Toh
+<br>Scrum master: Megan Png
+<br>QA: Huan Hui Ying
+<br>Developers: Amanda Chan, Claris Toh
