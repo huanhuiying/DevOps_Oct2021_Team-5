@@ -4,3 +4,16 @@ Project Team
 <br>Scrum master: Megan Png
 <br>QA: Huan Hui Ying
 <br>Developers: Amanda Chan, Claris Toh
+
+
+##Latest Changes 
+
+
+##Project Background
+
+
+##Team's Approach
+
+
+##Diferent Requirements of the Assignment
+
