@@ -40,6 +40,5 @@ Project Team
 <li> V-Shape Model
 <li> Incremental Model + Iterative Model
 <li> Agile 
-<li> Evolutionary
 <li> Spiral
   </ol>
