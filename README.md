@@ -35,3 +35,11 @@ Project Team
   3.1 Exit Game
   </ol>
   
+<h2>SDLC Model to Consider</h2>
+<ol>
+<li> V-Shape Model
+<li> Incremental Model + Iterative Model
+<li> Agile 
+<li> Evolutionary
+<li> Spiral
+  </ol>
