@@ -3,7 +3,8 @@
 Project Team
 </br>Scrum master: Megan Png
 </br>QA: Huan Hui Ying
-</br>Developers: Amanda Chan, Claris Toh
+</br>Tech Lead: Claris Toh
+</br>Developers: Amanda Chan
 
 
   <h2>Latest Changes</h2>
