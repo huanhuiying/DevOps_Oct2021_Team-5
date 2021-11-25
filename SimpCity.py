@@ -15,6 +15,7 @@ def configure_menu(configure_menu_options):
     print()
     
 print("Welcome, mayor of Simp City")
+print("----------------------------")
 main_menu(main_menu_options)
 print("{}. {}".format("0", "Exit"))
 choosen_menu_option =  int(input("Your choice? "))
