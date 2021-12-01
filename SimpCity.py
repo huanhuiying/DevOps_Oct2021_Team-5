@@ -1,19 +1,49 @@
 #initate the variable turn_counter for Turn #number
-turn_counter = 0
+import random
 
+turn_counter = 0
+grid=[]
 main_menu_options = ["Start new game", "Load saved game"]
-configure_menu_options = ["Build a HSE", "Build a BCH", "See remaining buildings", "See current score"]
+building_options = ["BCH", "FAC", "HSE", "SHP", "HWY"]
 
 def main_menu(main_menu_options):
     for i in range (len(main_menu_options)):
         print("{}. {}".format(i+1,main_menu_options[i]))
     print()
 
-def configure_menu(configure_menu_options):
+def game_menu(turn_counter):
+    configure_menu_options = ["Build a ", "Build a ", "See remaining buildings", "See current score"]
+    print("{} {}" .format("Turn", str(turn_counter)))
+    grid_view(grid)
+    building_one = random.choice(building_options)
+    building_two = random.choice(building_options)
+    configure_menu_options[0] += building_one
+    configure_menu_options[1] += building_two
     for i in range (len(configure_menu_options)):
        print("{}. {}".format(i+1,configure_menu_options[i]))
     print()
-    
+    print("{}. {}".format("5", "Save game"))
+    print("{}. {}".format("0", "Exit to main menu"))
+    choosen_configureMenu_option =  int(input("Your choice? "))
+
+    return choosen_configureMenu_option, building_one, building_two
+
+def load_file(grid):
+    file = open("game_grid.csv", "r")
+    for line in file:
+        line = line.strip('\n')
+        grid.append(list(line))
+        
+    return grid
+
+def grid_view(grid):
+    for i in range(len(grid)):
+        line = ""
+        for thing in grid[i]:
+            line += thing
+        print(line)
+    return grid
+
 print("Welcome, mayor of Simp City")
 print("----------------------------")
 main_menu(main_menu_options)
@@ -23,27 +53,37 @@ print()
 
 #Start new game
 if choosen_menu_option == 1:
+    load_file(grid)
     print("{} {}" .format("Turn", str(turn_counter+1)))
     #code to print the sqaure buildings here
     while True:
-        configure_menu(configure_menu_options)
-        print()
-        print("{}. {}".format("5", "Save game"))
-        print("{}. {}".format("0", "Exit to main menu"))
-        choosen_configureMenu_option =  int(input("Your choice? "))
-        print()
-        if choosen_configureMenu_option == 1:
-            turn_counter = turn_counter+1 #can do in the function
-            input("{} ".format("Build where?"))
-            print("{} {}" .format("Turn", str(turn_counter+1)))
-            #code of the function that auto-generates the housing selections and plant the building selected to the inputted location 
+        turn_counter = turn_counter + 1
+        choosen_configureMenu_option, building_one, building_two = game_menu(turn_counter)
+        if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
+            if choosen_configureMenu_option == 1:
+                building_choice = list(building_one)
+            elif choosen_configureMenu_option == 2:
+                building_choice = list(building_two)
+                
+            location = list(input("{} ".format("Build where?")))
             print()
-        if choosen_configureMenu_option == 2:
-            turn_counter = turn_counter+1# can do in the function
-            input("{} ".format("Build where?"))
-            print("{} {}" .format("Turn", str(turn_counter+1)))
-            #code of the function that auto-generates the housing selections and plant the building selected to the inputted location 
-            print()
+            if location[0].lower() == "a":
+                column = 4
+            elif location[0].lower() == "b":
+                column = 10
+            elif location[0].lower() == "c":
+                column = 16
+            elif location[0].lower() == "d":
+                column = 22
+
+            row = int(location[1]) * 2
+
+            grid[row][column - 1] = building_choice[0]
+            grid[row][column] = building_choice[1]
+            grid[row][column +1] = building_choice[2]
+
+            continue
+
         if choosen_configureMenu_option == 3:
             #code of the function that allows the player to see the remanining building
             print()
@@ -56,4 +96,3 @@ if choosen_menu_option == 1:
         else:
             #code of the function that allows the player to exit to main menu
             print()
-
