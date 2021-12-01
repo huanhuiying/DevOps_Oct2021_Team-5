@@ -1,8 +1,6 @@
 #initate the variable turn_counter for Turn #number
-import random
-
 turn_counter = 0
-grid=[]
+
 main_menu_options = ["Start new game", "Load saved game"]
 configure_menu_options = ["Build a HSE", "Build a BCH", "See remaining buildings", "See current score"]
 
@@ -15,23 +13,7 @@ def configure_menu(configure_menu_options):
     for i in range (len(configure_menu_options)):
        print("{}. {}".format(i+1,configure_menu_options[i]))
     print()
-
-def load_file(grid):
-    file = open("game_grid.csv", "r")
-    for line in file:
-        line = line.strip('\n')
-        grid.append(list(line))
-        
-    return grid
-
-def grid_view(grid):
-    for i in range(len(grid)):
-        line = ""
-        for thing in grid[i]:
-            line += thing
-        print(line)
-    return grid
-
+    
 print("Welcome, mayor of Simp City")
 print("----------------------------")
 main_menu(main_menu_options)
@@ -41,11 +23,9 @@ print()
 
 #Start new game
 if choosen_menu_option == 1:
-    load_file(grid)
     print("{} {}" .format("Turn", str(turn_counter+1)))
     #code to print the sqaure buildings here
     while True:
-        grid_view(grid)
         configure_menu(configure_menu_options)
         print()
         print("{}. {}".format("5", "Save game"))
