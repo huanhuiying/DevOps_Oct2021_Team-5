@@ -2,6 +2,9 @@
 
 #US20 - As a user, I want to be able to go back to the main menu after I have ended the game.
 
+# turn_counter = 0
+# main_menu_options = ["Start new game", "Load saved game"]
+# configure_menu_options = ["Build a HSE", "Build a BCH", "See remaining buildings", "See current score"]
 
 #B is a bool, will trigger print menu if Bool is true
 def exitToMenu(b):
@@ -10,26 +13,23 @@ def exitToMenu(b):
 
 #Made Hui Ying's code into a function  
 def print_menu():
-    turn_counter = 0
-    main_menu_options = ["Start new game", "Load saved game"]
-    configure_menu_options = ["Build a HSE", "Build a BCH", "See remaining buildings", "See current score"]
-
+    
     def main_menu(main_menu_options):
+        print("Welcome, mayor of Simp City")
+        print("----------------------------")
         for i in range (len(main_menu_options)):
             print("{}. {}".format(i+1,main_menu_options[i]))
-            print()
+        print("{}. {}".format("0", "Exit"))  
+        choosen_menu_option =  int(input("Your choice? "))
+        print()
+        return (choosen_menu_option)
 
     def configure_menu(configure_menu_options):
         for i in range (len(configure_menu_options)):
             print("{}. {}".format(i+1,configure_menu_options[i]))
-            print()
+        print()
 
-    print("Welcome, mayor of Simp City")
-    print("----------------------------")
-    main_menu(main_menu_options)
-    print("{}. {}".format("0", "Exit"))
-    choosen_menu_option =  int(input("Your choice? "))
-    print()
+    choosen_menu_option = main_menu(main_menu_options)
 
     #Start new game
     if choosen_menu_option == 1:
@@ -62,6 +62,8 @@ def print_menu():
                 print()
             if choosen_configureMenu_option == 5:
                 #code of the function that allows the player to save their current game progress
+                print()
+            if choosen_configureMenu_option == 0:
                 print()
             else:
                 #code of the function that allows the player to exit to main menu
