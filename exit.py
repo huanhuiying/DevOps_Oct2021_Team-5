@@ -6,10 +6,6 @@
 # main_menu_options = ["Start new game", "Load saved game"]
 # configure_menu_options = ["Build a HSE", "Build a BCH", "See remaining buildings", "See current score"]
 
-#B is a bool, will trigger print menu if Bool is true
-#def exitToMenu(input):
-    #if(input):
-        #print_menu()
 
 def exitToMenu():
     return
