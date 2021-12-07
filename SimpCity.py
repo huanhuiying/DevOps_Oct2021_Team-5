@@ -44,6 +44,22 @@ def grid_view(grid):
         print(line)
     return grid
 
+def place_building(location, building_choice):
+    if location[0].lower() == "a":
+        column = 4
+    elif location[0].lower() == "b":
+        column = 10
+    elif location[0].lower() == "c":
+        column = 16
+    elif location[0].lower() == "d":
+        column = 22
+
+    row = int(location[1]) * 2
+
+    grid[row][column - 1] = building_choice[0]
+    grid[row][column] = building_choice[1]
+    grid[row][column +1] = building_choice[2]
+
 print("Welcome, mayor of Simp City")
 print("----------------------------")
 main_menu(main_menu_options)
@@ -67,21 +83,9 @@ if choosen_menu_option == 1:
                 
             location = list(input("{} ".format("Build where?")))
             print()
-            if location[0].lower() == "a":
-                column = 4
-            elif location[0].lower() == "b":
-                column = 10
-            elif location[0].lower() == "c":
-                column = 16
-            elif location[0].lower() == "d":
-                column = 22
-
-            row = int(location[1]) * 2
-
-            grid[row][column - 1] = building_choice[0]
-            grid[row][column] = building_choice[1]
-            grid[row][column +1] = building_choice[2]
-
+            
+            place_building(location, building_choice)
+            
             continue
 
         if choosen_configureMenu_option == 3:
