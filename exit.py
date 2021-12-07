@@ -8,13 +8,22 @@
 
 
 def exitToMenu():
+    printPrompt()
+    checkUserInput(input= "Y")
     return 
 
 def printPrompt():
     return "Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: "
 
 def checkUserInput(input):
-    return
+    if input == 'Y':
+        return printMenu()
+    elif input == 'N':
+        return "Exit to main menu is cancelled."
+    else:
+        return "Invalid input. Please enter 'Y' or 'N' to continue: "
+    
+    
 
 def printMenu():
-    return
+    return "Menu Printed"
