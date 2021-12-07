@@ -13,7 +13,7 @@ def test_ExitChosen():
 
 def test_ExitPrompt_NoInput():
     result = exitToMenu()
-    assert result == "Invalid input. Please enter 'Y' or 'N' to continue. "
+    assert result == "Invalid input. Please enter 'Y' or 'N' to continue: "
 
 
 @pytest.mark.parametrize("input, expectedresult", 
