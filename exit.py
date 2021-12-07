@@ -8,10 +8,10 @@
 
 
 def exitToMenu():
-    return
+    return 
 
 def printPrompt():
-    return
+    return "Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: "
 
 def checkUserInput(input):
     return
