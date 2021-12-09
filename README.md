@@ -8,7 +8,7 @@ Project Team
 
 
   <h2>Latest Changes</h2>
-
+  <a href="https://docs.google.com/spreadsheets/d/1tX3el3ndlgzSFnqHNxrp61wxTIDeNvBg638vxIcpcmc/edit?usp=sharing">Link to project schedule</a>
 
   <h2>Project Background</h2>
 
