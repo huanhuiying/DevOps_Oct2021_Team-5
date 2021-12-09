@@ -2,9 +2,7 @@
 
 #US20 - As a user, I want to be able to go back to the main menu after I have ended the game.
 #Write test script first, fail it then pass
-# turn_counter = 0
-# main_menu_options = ["Start new game", "Load saved game"]
-# configure_menu_options = ["Build a HSE", "Build a BCH", "See remaining buildings", "See current score"]
+
 
 flag = True
 count = 0
@@ -28,10 +26,12 @@ def validateUserInput(input, c):
     c = 1
     if(input == "Y" or input == "N"):
         print(c)
-        return (False, c)
+        return
+        #return False, c
     else:
         print(c)
-        return (True, c)
+        return
+        #return True, c
     
 
 

@@ -28,7 +28,7 @@ def test_ExitChosen(flag, count, input, expectedresult):
 
 def test_ExitPrompt_InvalidInput(input, count, resbool, rescount):
     result = validateUserInput(input, count)
-    assert result == resbool, rescount
+    assert result == (resbool, rescount)
 
 
 @pytest.mark.parametrize("input, expectedresult", 
