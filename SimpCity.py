@@ -1,6 +1,8 @@
+import random
 
+turn_counter = 0
 main_menu_options = ["Start new game", "Load saved game"]
-configure_menu_options = ["Build a HSE", "Build a BCH", "See remaining buildings", "See current score"]
+building_options = ["BCH", "FAC", "HSE", "SHP", "HWY"]
 grid=[]
 
 # function for the main menu is initiated 
@@ -14,12 +16,6 @@ def main_menu(main_menu_options):
     print()
     return (choosen_menu_option)
 
-# function for configure menu 
-def configure_menu(configure_menu_options):
-    for i in range (len(configure_menu_options)):
-       print("{}. {}".format(i+1,configure_menu_options[i]))
-    print()
-
 #function to load game map
 def load_file(grid):
     file = open("game_grid.csv", "r")
@@ -29,7 +25,8 @@ def load_file(grid):
         
     return grid
   
-  #function to print game map
+  
+#function to print game map
 def grid_view(grid):
     for i in range(len(grid)):
         line = ""
@@ -37,6 +34,40 @@ def grid_view(grid):
             line += thing
         print(line)
     return grid
+  
+# function for configure menu 
+def configure_menu(turn_counter):
+    configure_menu_options = ["Build a ", "Build a ", "See remaining buildings", "See current score"]
+    print("{} {}" .format("Turn", str(turn_counter)))
+    grid_view(grid)
+    building_one = random.choice(building_options)
+    building_two = random.choice(building_options)
+    configure_menu_options[0] += building_one
+    configure_menu_options[1] += building_two
+    for i in range (len(configure_menu_options)):
+       print("{}. {}".format(i+1,configure_menu_options[i]))
+    print()
+    print("{}. {}".format("5", "Save game"))
+    print("{}. {}".format("0", "Exit to main menu"))
+    choosen_configureMenu_option =  int(input("Your choice? "))
+
+    return choosen_configureMenu_option, building_one, building_two
+  
+def place_building(location, building_choice):
+    if location[0].lower() == "a":
+        column = 4
+    elif location[0].lower() == "b":
+        column = 10
+    elif location[0].lower() == "c":
+        column = 16
+    elif location[0].lower() == "d":
+        column = 22
+
+    row = int(location[1]) * 2
+
+    grid[row][column - 1] = building_choice[0]
+    grid[row][column] = building_choice[1]
+    grid[row][column +1] = building_choice[2]
 
 # function is called and choosen menu option is return
 choosen_menu_option = main_menu(main_menu_options)
@@ -46,11 +77,17 @@ if choosen_menu_option == 1:
     load_file(grid)
 
     while True:
-        #print game map
-        grid_view(grid)
-        configure_menu(configure_menu_options)
-        print()
-        print("{}. {}".format("5", "Save game"))
-        print("{}. {}".format("0", "Exit to main menu"))
-        choosen_configureMenu_option =  int(input("Your choice? "))
-        print()
+      turn_counter = turn_counter + 1
+      choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
+      if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
+          if choosen_configureMenu_option == 1:
+              building_choice = list(building_one)
+          elif choosen_configureMenu_option == 2:
+              building_choice = list(building_two)
+                
+          location = list(input("{} ".format("Build where?")))
+          print()
+            
+          place_building(location, building_choice)
+            
+          continue
