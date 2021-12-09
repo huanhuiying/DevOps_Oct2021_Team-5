@@ -8,15 +8,16 @@
 
 flag = True
 count = 0
+i = ""
 
-def printPrompt(bool, count):
+def printPrompt(bool, count, ipt):
     if(bool == True):
         if(count == 0):
-            return "Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: "
+            return print("Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: ")
         else:
-            return "Invalid input. Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: "
+            return print("Invalid input. Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: ")
     else:
-        checkUserInput()
+        checkUserInput(ipt)
 
     
 
@@ -40,14 +41,18 @@ def checkUserInput(input):
     else:
         return "Invalid input. Please enter 'Y' or 'N' to continue: "
 
-def exitToMenu(f, c):
+def exitToMenu(f, c, i):
     print(c)
-    printPrompt(f, c)
-    ans = input()
-    print(ans)
 
-    f, c = validateUserInput(ans, c)
-    printPrompt(f,c)
+    while(f):
+        printPrompt(f, c,i)
+        i = input()
+        print(i)
+        f, c = validateUserInput(i, c)
+        printPrompt(f,c,i)
+        if(f == False):
+            print("Prompt Ended")
+            break
     return 
 
-exitToMenu(flag,count)
+exitToMenu(flag,count,i)
