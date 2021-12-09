@@ -17,7 +17,7 @@ def printPrompt(bool, count, ipt):
         else:
             return print("Invalid input. Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: ")
     else:
-        checkUserInput(ipt)
+        return checkUserInput(ipt)
 
     
 
@@ -26,12 +26,12 @@ def printMenu():
 
 def validateUserInput(input, c):
     c = 1
-    if(input != "Y" and input != "N"):
-        return
-        #return False, c
+    if(input == "Y" or input == "N"):
+        print(c)
+        return (False, c)
     else:
-        return
-        #return True, c
+        print(c)
+        return (True, c)
     
 
 
@@ -55,4 +55,4 @@ def exitToMenu(f, c, i):
             break
     return 
 
-exitToMenu(flag,count,i)
+#exitToMenu(flag,count,i)
