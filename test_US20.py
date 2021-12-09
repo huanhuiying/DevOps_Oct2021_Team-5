@@ -18,13 +18,17 @@ def test_ExitChosen(flag, count, input, expectedresult):
     result = printPrompt(flag, count, input)
     assert result == expectedresult
 
-@pytest.mark.parametrize("input, count, expectedresult", 
-[("Y", 0, printPrompt(bool=False, count=1, input="Y")), ("N", 0, printPrompt(bool=False, count=1, input="N")),
- ("Invalid", 0, printPrompt(bool=True, count=1, input="Invalid"))])
+#@pytest.mark.parametrize("input, count, expectedresult", 
+#[("Y", 0, printPrompt(bool=False, count=1, input="Y")), ("N", 0, printPrompt(bool=False, count=1, input="N")),
+# ("Invalid", 0, printPrompt(bool=True, count=1, input="Invalid"))])
 
-def test_ExitPrompt_InvalidInput(input, count, expectedresult):
+@pytest.mark.parametrize("input, count, resbool, rescount", 
+[("Y", 0, False, 1), ("N", 0, False, 1),
+ ("Invalid", 0, True, 1)])
+
+def test_ExitPrompt_InvalidInput(input, count, resbool, rescount):
     result = validateUserInput(input, count)
-    assert result == expectedresult
+    assert result == resbool, rescount
 
 
 @pytest.mark.parametrize("input, expectedresult", 
