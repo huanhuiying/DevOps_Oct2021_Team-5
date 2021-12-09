@@ -22,14 +22,16 @@ def printPrompt(bool, count, ipt):
     
 
 def printMenu():
-    return "Menu Printed"
+    return print("Menu Printed")
 
 def validateUserInput(input, c):
     c = 1
     if(input != "Y" and input != "N"):
-        return False, c
+        return
+        #return False, c
     else:
-        return True, c
+        return
+        #return True, c
     
 
 
@@ -37,9 +39,7 @@ def checkUserInput(input):
     if input == 'Y':
         return printMenu()
     elif input == 'N':
-        return "Exit to main menu is cancelled."
-    else:
-        return "Invalid input. Please enter 'Y' or 'N' to continue: "
+        return print("Exit to main menu is cancelled.")
 
 def exitToMenu(f, c, i):
     print(c)
