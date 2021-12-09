@@ -6,15 +6,30 @@
 # main_menu_options = ["Start new game", "Load saved game"]
 # configure_menu_options = ["Build a HSE", "Build a BCH", "See remaining buildings", "See current score"]
 
+flag = True
+count = 0
 
 def printPrompt(bool, count):
-    return "Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: "
+    if(bool == True):
+        if(count == 0):
+            return "Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: "
+        else:
+            return "Invalid input. Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: "
+    else:
+        checkUserInput()
+
+    
 
 def printMenu():
     return "Menu Printed"
 
-def validateUserInput(input, count):
-    return
+def validateUserInput(input, c):
+    c = 1
+    if(input != "Y" and input != "N"):
+        return False, c
+    else:
+        return True, c
+    
 
 
 def checkUserInput(input):
@@ -25,7 +40,14 @@ def checkUserInput(input):
     else:
         return "Invalid input. Please enter 'Y' or 'N' to continue: "
 
-def exitToMenu():
-    printPrompt()
-    emptyinput = None
-    return checkUserInput(emptyinput)
+def exitToMenu(f, c):
+    print(c)
+    printPrompt(f, c)
+    ans = input()
+    print(ans)
+
+    f, c = validateUserInput(ans, c)
+    printPrompt(f,c)
+    return 
+
+exitToMenu(flag,count)

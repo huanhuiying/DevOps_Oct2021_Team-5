@@ -8,19 +8,19 @@ from exit import *
 #If input to prompt is invalid, print error message and request user to retry
 
 
-@pytest.mark.parametrize("flag, count, expectedresult", 
-[(True, 0, print("Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: ")),
-(True, 1, print("Invalid input. Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: ")),
- (False, 1, checkUserInput(input="Y")), (False, 1, checkUserInput(input="N"))])
+@pytest.mark.parametrize("flag, count, input, expectedresult", 
+[(True, 0, "", print("Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: ")),
+(True, 1, "Invalid", print("Invalid input. Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: ")),
+ (False, 1, "Y", checkUserInput(input="Y")), (False, 1, "N", checkUserInput(input="N"))])
 
 #first test
-def test_ExitChosen(flag, count, expectedresult):
-    result = printPrompt(flag, count)
+def test_ExitChosen(flag, count, input, expectedresult):
+    result = printPrompt(flag, count, input)
     assert result == expectedresult
 
 @pytest.mark.parametrize("input, count, expectedresult", 
-[("Y", 0, printPrompt(bool=False, count=1)), ("N", 0, printPrompt(bool=False, count=1)),
- ("Invalid", 0, printPrompt(bool=True, count=1))])
+[("Y", 0, printPrompt(bool=False, count=1, input="Y")), ("N", 0, printPrompt(bool=False, count=1, input="N")),
+ ("Invalid", 0, printPrompt(bool=True, count=1, input="Invalid"))])
 
 def test_ExitPrompt_InvalidInput(input, count, expectedresult):
     result = validateUserInput(input, count)
