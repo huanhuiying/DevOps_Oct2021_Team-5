@@ -7,13 +7,15 @@
 # configure_menu_options = ["Build a HSE", "Build a BCH", "See remaining buildings", "See current score"]
 
 
-
-
-def printPrompt():
+def printPrompt(bool, count):
     return "Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: "
 
 def printMenu():
     return "Menu Printed"
+
+def validateUserInput(input, count):
+    return
+
 
 def checkUserInput(input):
     if input == 'Y':

@@ -7,13 +7,24 @@ from exit import *
 #If input to prompt is "N", delete prompt
 #If input to prompt is invalid, print error message and request user to retry
 
-def test_ExitChosen():
-    result = printPrompt()
-    assert result == "Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: "
 
-def test_ExitPrompt_NoInput():
-    result = exitToMenu()
-    assert result == "Invalid input. Please enter 'Y' or 'N' to continue: "
+@pytest.mark.parametrize("flag, count, expectedresult", 
+[(True, 0, print("Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: ")),
+(True, 1, print("Invalid input. Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: ")),
+ (False, 1, checkUserInput(input="Y")), (False, 1, checkUserInput(input="N"))])
+
+#first test
+def test_ExitChosen(flag, count, expectedresult):
+    result = printPrompt(flag, count)
+    assert result == expectedresult
+
+@pytest.mark.parametrize("input, count, expectedresult", 
+[("Y", 0, printPrompt(bool=False, count=1)), ("N", 0, printPrompt(bool=False, count=1)),
+ ("Invalid", 0, printPrompt(bool=True, count=1))])
+
+def test_ExitPrompt_InvalidInput(input, count, expectedresult):
+    result = validateUserInput(input, count)
+    assert result == expectedresult
 
 
 @pytest.mark.parametrize("input, expectedresult", 
