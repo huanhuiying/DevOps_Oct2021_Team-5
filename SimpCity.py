@@ -1,4 +1,7 @@
+
 main_menu_options = ["Start new game", "Load saved game"]
+grid=[]
+
 # function for the main menu is initiated 
 def main_menu(main_menu_options):
     print("Welcome, mayor of Simp City")
@@ -12,4 +15,25 @@ def main_menu(main_menu_options):
 
 # function is called and choosen menu option is return
 choosen_menu_option = main_menu(main_menu_options)
-   
+
+#function to load game map
+def load_file(grid):
+    file = open("game_grid.csv", "r")
+    for line in file:
+        line = line.strip('\n')
+        grid.append(list(line))
+        
+    return grid
+  
+  #function to print game map
+def grid_view(grid):
+    for i in range(len(grid)):
+        line = ""
+        for thing in grid[i]:
+            line += thing
+        print(line)
+    return grid
+  
+ #function to load file and print map
+load_file(grid)
+grid_view(grid)
