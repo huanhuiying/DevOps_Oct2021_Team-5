@@ -28,7 +28,7 @@ def test_ExitPrompt_InvalidInput(input, count, expectedresult):
 
 
 @pytest.mark.parametrize("input, expectedresult", 
-[("Y", printMenu()), ("N", "Exit to main menu is cancelled.")])
+[("Y", printMenu()), ("N", print("Exit to main menu is cancelled."))])
 
 def test_Exit_UserInput(input, expectedresult):
     result = checkUserInput(input)
