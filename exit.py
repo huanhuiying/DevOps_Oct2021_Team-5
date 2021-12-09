@@ -7,13 +7,13 @@
 # configure_menu_options = ["Build a HSE", "Build a BCH", "See remaining buildings", "See current score"]
 
 
-def exitToMenu():
-    printPrompt()
-    checkUserInput(input= "Y")
-    return 
+
 
 def printPrompt():
     return "Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: "
+
+def printMenu():
+    return "Menu Printed"
 
 def checkUserInput(input):
     if input == 'Y':
@@ -22,8 +22,8 @@ def checkUserInput(input):
         return "Exit to main menu is cancelled."
     else:
         return "Invalid input. Please enter 'Y' or 'N' to continue: "
-    
-    
 
-def printMenu():
-    return "Menu Printed"
+def exitToMenu():
+    printPrompt()
+    emptyinput = None
+    return checkUserInput(emptyinput)
