@@ -26,12 +26,10 @@ def validateUserInput(input, c):
     c = 1
     if(input == "Y" or input == "N"):
         print(c)
-        return
-        #return False, c
+        return False, c
     else:
         print(c)
-        return
-        #return True, c
+        return True,c
     
 
 
