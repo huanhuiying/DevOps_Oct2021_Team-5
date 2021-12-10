@@ -13,6 +13,10 @@ Project Team
   <a href="https://docs.google.com/spreadsheets/d/1tX3el3ndlgzSFnqHNxrp61wxTIDeNvBg638vxIcpcmc/edit?usp=sharing">Link to Project Schedule</a> </br>
   <a href="https://docs.google.com/document/d/1wb-C8OHoWW_vbBH2aLk3durw-UetdH7pjSJJaAELosY/edit?usp=sharing">Link to Development Tech Notes</a> </br>
   <a href="https://docs.google.com/document/d/18b-z5AkiJ0Z17K83W6AaTdXhWpSoJKHzDPN01gHf85Q/edit?usp=sharing">Link to User Acceptance Criteria</a> </br>
+  
+  <h2>Sprint Retrospectives</h2>
+  <a href="https://docs.google.com/document/d/1HH2GRwInOwWczK_qj-3854chnIlAdsrY/edit?usp=sharing&ouid=112796443500104222435&rtpof=true&sd=true">Link to Sprint 1 Retrospective</a> </br>
+  <a href="https://docs.google.com/document/d/1yt4ywSWMIp6nAhfCosxCW-nYPpaOqdlr/edit?usp=sharing&ouid=112796443500104222435&rtpof=true&sd=true">Link to Sprint 2 Retrospective</a> </br>
 
   <h2>Project Background</h2>
 
@@ -116,7 +120,59 @@ The Evolutionary model combines both the Incremental model and Iterative model. 
     <p>There are some benefits of using the Evolutionary model in this project in that it is fitted to be used in object-oriented development and the model is fitted to manage any changes made to the requirements. However, the project on hand is a smaller project and it will be difficult to break down the deliverables into different increments for the client to test. In addition, changes made to requirements can be made after each increment and not during the phase. Hence, the Evolutionary model is not the best fitted choice in this project.
 </p>
   <li> Agile 
-  <li> Spiral
+  <li> Spiral </br>
+  </br>
+    <strong><u>Definition of Spiral Model: </u></strong> </br>
+    <p>The Spiral model is a system development life cycle (SDLC) used mainly for large-scale, high-risk projects. It combines the waterfall model and iterative model to allow frequent releases.
+It consists of 4 main phases which are cycled until the project’s completion.
+<ul>
+  <li>Requirement Gathering
+    <p>This stage is where the requirements of the project are collected. In subsequent spirals in the course of the project, any other system requirements are also realised in this phase. </p>
+    <li>Analysis
+      <p>Using the requirements gathered in the previous phase, analysis will take place to consider different solutions that could satisfy the requirements. During this phase, risk analysis will take place to identify and estimate the technical feasibility such as schedule slippage and cost-overrun (What is Spiral Model? Definition of Spiral Model, Spiral Model Meaning - The Economic Times, 2021). </p>
+     <li>Development and Testing
+       <p>After doing the analysis and choosing the best solution, development will take place. The product that is roughly done up in the first few spirals will be considered as a Proof of Concept to get the users’ feedback in the next stage. In subsequent spirals, when the requirements get clearer, the working build will be sent with version numbers to the users to get their feedback (What is Spiral Model? Definition of Spiral Model, Spiral Model Meaning - The Economic Times, 2021). </p>
+      <li>Evaluation and Review
+        <p>At the end of the first spiral, the users will evaluate the product and provide their feedback. Their feedback will carry into the next iteration as new requirements.
+  </br>
+Due to the nature of the Spiral Model, this model requires heavy documentation to monitor and keep track of risks, constraints, additional requirements, progress as well as feedback from users. </br>
+  </br>
+However, the constant iterations will allow for changes in requirements easily. </br>
+</p>
+    </br>
+    <strong><u>Pros: </u></strong> </br>
+    <ul>
+      <li>Very flexible
+      <li>Suitable for large scale projects
+      <li>Easy to monitor
+      <li>Accommodates for change in requirements easily
+      <li>Allows additional post-project functionality
+      <li>Good for projects of high-risk (Spiral Model: When to Use? Advantages & Disadvantages, 2021)
+      <li>Suitable for budget heavy projects 
+    </ul>
+    </br>
+    <strong><u>Cons: </u></strong> </br>
+    <ul>
+      <li>Heavy on documentation
+      <li>Rules and SOP to be followed closely 
+    </ul>
+    </br>
+    <strong><u>Suitability of Evolutionary model: </u></strong> </br>
+    <p>Looking at the pros and cons of the Spiral Model, as well as the project case study, this project will not fully make use of the features in this SDLC. </br>
+
+This model is flexible and allows changes and or additions to requirements, which aligns with the project case study where it states that additional requirements might be added. </br>
+
+This model also values heavy documentation, which might not be necessary for this project. </br>
+
+The Spiral model allows risk assessment in the Analysis stage in each iteration. With constant risk assessment, a high risk project that has a high budget would benefit from this. This project is not considered high risk and does not have a budget to work with, hence this model might not be suitable. </br>
+
+This model is also time consuming, since multiple iterations must be completed. The speed of each iteration would depend on the team’s ability to deliver functions on time. The team has projects to work on other than this one, so they might not be able to fully commit themselves to this project. </br>
+
+Finally, the model doesn’t encourage back tracking in stages, so if the project were to strictly follow the spiral model, it might pose an inconvenience. </br>
+
+Therefore, the Spiral Model is not suitable for this project and another SDLC should be considered. </br>
+
+</p>
   <li> Big Bang
   <li> References </br>
     <ul>
