@@ -69,82 +69,43 @@ def place_building(location, building_choice):
     grid[row][column] = building_choice[1]
     grid[row][column +1] = building_choice[2]
 
-#Exit Game to Menu
+# Exit to game menu
 
-#US20 - As a user, I want to be able to go back to the main menu after I have ended the game.
-#Write test script first, fail it then pass
-
-
-flag = True
-count = 0
-i = ""
-
-def printPrompt(bool, count, ipt):
-    if(bool == True):
-        if(count == 0):
-            return print("Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: ")
-        else:
-            return print("Invalid input. Please enter 'Y' to confirm exiting to main menu or 'N' to cancel: ")
+def exitAfterGameEnd(tc):
+    if (tc == 16):
+        return True
     else:
-        return checkUserInput(ipt)
-
-    
-
-def printMenu():
-    return print("Menu Printed")
-
-def validateUserInput(input, c):
-    c = 1
-    if(input == "Y" or input == "N"):
-        print(c)
-        return False, c
-    else:
-        print(c)
-        return True,c
-    
-
-
-def checkUserInput(input):
-    if input == 'Y':
-        return printMenu()
-    elif input == 'N':
-        return print("Exit to main menu is cancelled.")
-
-def exitToMenu(f, c, i):
-    print(c)
-
-    while(f):
-        printPrompt(f, c,i)
-        i = input()
-        print(i)
-        f, c = validateUserInput(i, c)
-        printPrompt(f,c,i)
-        if(f == False):
-            print("Prompt Ended")
-            break
-    return 
-
-#exitToMenu(flag,count,i)
+        return False
 
 # function is called and choosen menu option is return
-choosen_menu_option = main_menu(main_menu_options)
+while True:
+    choosen_menu_option = main_menu(main_menu_options)
+    if choosen_menu_option == 1:
+        #load game map
+        load_file(grid)
 
-if choosen_menu_option == 1:
-    #load game map
-    load_file(grid)
-
-    while True:
-      turn_counter = turn_counter + 1
-      choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
-      if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
-          if choosen_configureMenu_option == 1:
-              building_choice = list(building_one)
-          elif choosen_configureMenu_option == 2:
-              building_choice = list(building_two)
+        while True:
+          turn_counter = turn_counter + 1
+          choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
+          if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
+              if choosen_configureMenu_option == 1:
+                  building_choice = list(building_one)
+              elif choosen_configureMenu_option == 2:
+                  building_choice = list(building_two)
+                    
+              location = list(input("{} ".format("Build where?")))
+              print()
                 
-          location = list(input("{} ".format("Build where?")))
-          print()
+              place_building(location, building_choice)
+
+              turn_counter = 16
+
+              if exitAfterGameEnd(turn_counter):
+                  turn_counter = 0
+                  grid = []
+                  break
+                
+              else:
+                  continue
             
-          place_building(location, building_choice)
-            
-          continue
+          
