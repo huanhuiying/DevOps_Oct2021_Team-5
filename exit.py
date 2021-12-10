@@ -54,3 +54,6 @@ def exitToMenu(f, c, i):
     return 
 
 #exitToMenu(flag,count,i)
+
+def exitAfterGameEnd(count):
+    return
