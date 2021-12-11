@@ -1,13 +1,34 @@
 # DevOps_Oct2021_Team-5
 
-Project Team
+<strong>Project Team</strong>
 </br>Scrum master: Megan Png
 </br>QA: Huan Hui Ying
 </br>Tech Lead: Claris Toh
 </br>Developers: Amanda Chan
 
+<h2>Project Background</h2>
+  <p>
+    The team has to develop a city-building strategy game called Simp City. It is a strategy game played over 16 turns and the player plays as the mayor of Simp City. The objective of the game is to build a city that scores as many points as possible.
+  </p>
 
   <h2>Latest Changes</h2>
+  
+  <h2>Task Assigned</h2>
+  <strong><u>Sprint 1</u></strong> </br>
+  <ul>
+    <li>Megan - Analysis of V-Shape Model
+    <li>Claris - Analysis of Spiral Model
+    <li>Hui Ying - Analysis of Agile & Big Bang Model
+    <li>Amanda - Analysis of Evolutionary Model
+  </ul>
+  </br>
+  <strong><u>Sprint 2</u></strong> </br>
+  <ul>
+    <li>Megan - US20
+    <li>Claris - US1
+    <li>Hui Ying - US21
+    <li>Amanda - US5 & US9
+  </ul>
   
   <h2>Links</h2>
   <a href="https://docs.google.com/spreadsheets/d/1tX3el3ndlgzSFnqHNxrp61wxTIDeNvBg638vxIcpcmc/edit?usp=sharing">Link to Project Schedule</a> </br>
@@ -18,10 +39,23 @@ Project Team
   <a href="https://docs.google.com/document/d/1HH2GRwInOwWczK_qj-3854chnIlAdsrY/edit?usp=sharing&ouid=112796443500104222435&rtpof=true&sd=true">Link to Sprint 1 Retrospective</a> </br>
   <a href="https://docs.google.com/document/d/1yt4ywSWMIp6nAhfCosxCW-nYPpaOqdlr/edit?usp=sharing&ouid=112796443500104222435&rtpof=true&sd=true">Link to Sprint 2 Retrospective</a> </br>
 
-  <h2>Project Background</h2>
-
-
   <h2>Team's Approach</h2>
+  ![Untitled Notebook (2)](https://user-images.githubusercontent.com/60087811/145686282-1aa7270f-d466-4dc8-a646-86b718577843.png)
+  </br>
+  In the end, we decided to incorporate the two SDLC models, AGILE and the Big Bang Model together for our project. Agile SCRUM methodology is suitable for the project as in the assignment document, it stated that there may be a change in requirement, hence through adopting Agile it helps the team to respond to the change in scope or requirement better.</br> </br> 
+In Agile, the project time frame is broken down into multiple sprints, since there are a number of requirements to fulfill for the project, complex and complicated requirements can be broken down into simpler manageable tasks that can be spread across multiple sprints for development. Sprint planning helps to give the team a clear picture of what will be done in the following sprint to contribute to the project progress increment and also allow the team members to agree on the backlog items that they will work on to achieve a set sprint goal. </br>
+</br>
+Furthermore, Agile focuses more on delivering working products than providing extensive documentation and since the team has a short timeline to deliver a product, by implementing Agile scrum methodology, it aids in delivering the product faster as prioritization is done in delivering requirements. </br>
+</br>
+Lastly, with Sprint Review and Sprint Retrospective, it allows the team to gather feedback in each sprint, hence if improvement or new requirements are needed to be made, it would be easier for the team to make relevant adjustments on freshly delivered features rather than a completed and fully tested software. Moreover, with Sprint Retrospective, it helps the team to finetune their project progress and make necessary adjustments to make sure they improve after each sprint. </br>
+</br>
+For Big Bang, it allows each Sprint to have flexibility to the development team to be able to work on the code whenever they are free. This is important as the team members’ availability are limited due to other commitments besides this project. Furthermore, the team predicts that there might be a change in the project scope and requirements, hence, as this approach is easy to implement due to its simplicity, it helps the team to minimize the time and effort required to deliver the minimal viable product (MVP) but maximize the efficiency and quality of the product. </br>
+</br>
+In conclusion, the team will be following the aspect of Agile Scrum methodology in the implementation of the project, however, for the process of development, we will be following the approach of a Big Bang Model. Hence, we will be having consistent delivery for the overall project, but during the sprints, delivery of development and testing is done in an inconsistent frequency. </br>
+</br>
+The project will be done over the span of 6 sprints, where each sprint will last 2-3 weeks. </br>
+</br>
+
 
 
   <h2>Different Requirements of the Assignment</h2>
