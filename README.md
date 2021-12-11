@@ -205,7 +205,7 @@ However, the constant iterations will allow for changes in requirements easily. 
       <li>Rules and SOP to be followed closely 
     </ul>
     </br>
-    <strong><u>Suitability of Evolutionary model: </u></strong> </br>
+    <strong><u>Suitability of Spiral model: </u></strong> </br>
     <p>Looking at the pros and cons of the Spiral Model, as well as the project case study, this project will not fully make use of the features in this SDLC. </br>
 
 This model is flexible and allows changes and or additions to requirements, which aligns with the project case study where it states that additional requirements might be added. </br>
