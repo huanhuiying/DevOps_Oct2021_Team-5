@@ -40,7 +40,7 @@
   <a href="https://docs.google.com/document/d/1yt4ywSWMIp6nAhfCosxCW-nYPpaOqdlr/edit?usp=sharing&ouid=112796443500104222435&rtpof=true&sd=true">Link to Sprint 2 Retrospective</a> </br>
 
   <h2>Team's Approach</h2>
-  ![Untitled Notebook (2)](https://user-images.githubusercontent.com/60087811/145686282-1aa7270f-d466-4dc8-a646-86b718577843.png)
+  <img width = "800" src = "https://github.com/huanhuiying/DevOps_Oct2021_Team-5/blob/main/images/workflow.jpg">
   </br>
   In the end, we decided to incorporate the two SDLC models, AGILE and the Big Bang Model together for our project. Agile SCRUM methodology is suitable for the project as in the assignment document, it stated that there may be a change in requirement, hence through adopting Agile it helps the team to respond to the change in scope or requirement better.</br> </br> 
 In Agile, the project time frame is broken down into multiple sprints, since there are a number of requirements to fulfill for the project, complex and complicated requirements can be broken down into simpler manageable tasks that can be spread across multiple sprints for development. Sprint planning helps to give the team a clear picture of what will be done in the following sprint to contribute to the project progress increment and also allow the team members to agree on the backlog items that they will work on to achieve a set sprint goal. </br>
@@ -258,7 +258,7 @@ Therefore, the Spiral Model is not suitable for this project and another SDLC sh
   <li> Big Bang </br>
   </br>
       <strong><u>Definition of Big Bang Model: </u></strong> </br>
-    <p>The Big bang model, as its name implies, adopts an “One Big Boom” approach. This approach gathers all available possible time, effort and resources in software development to deliver a product. The Big Bang Model requires little planning and does not follow any specific procedure or process in development and coding. The development of a software just commence with required funds and resources as an input and the output of the software developed may or may not be meeting the customers requirements, hence this approach is known to be high risk with uncertain outcome. During development, the requirements are understood without much analysis and ideas are implemented as they come along. Even the customer is not sure about what exactly he wants and the requirements are implemented on the fly without much analysis and any changes required may or may not need to revamp the complete software. </p>
+    <p>The Big bang model, as its name implies, adopts an “One Big Boom” approach. This approach gathers all available possible time, effort and resources in software development to deliver a product. The Big Bang Model requires little planning and does not follow any specific procedure or process in development and coding. The development of a software just commence with required funds and resources as an input and the output of the software developed may or may not be meeting the customers requirements, hence this approach is known to be high risk with uncertain outcome. During development, the requirements are understood without much analysis and ideas are implemented as they come along. Even the customer is not sure about what exactly he wants and the requirements are implemented on the fly without much analysis and any changes required may or may not need to revamp the complete software (Point, n.d.)(Satyabrata_Jena, 2021)(TutorialsCampus, n.d.). </p>
 </br>
     <strong><u>Pros: </u></strong> </br>
     <ul>
@@ -292,4 +292,7 @@ Therefore, the Spiral Model is not suitable for this project and another SDLC sh
       <li>javaTpoint. (n.d.). Iterative Model. Retrieved from javaTpoint: https://www.javatpoint.com/software-engineering-iterative-model 
       <li>pp_pankaj. (2019, April 30). Software Engineering | Evolutionary Model. Retrieved from GeeksforGeeks: https://www.geeksforgeeks.org/software-engineering-evolutionary-model/ 
       <li>Scrum.org. (n.d.). What is Scrum? Retrieved from Scrum.org: https://www.scrum.org/resources/what-is-scrum
+      <li>Point, T. (n.d.). SDLC - Big Bang Model. Retrieved from Tutorials Point: https://www.tutorialspoint.com/sdlc/sdlc_bigbang_model.htm
+      <li>Satyabrata_Jena. (2021, March 2021). Overview of Big Bang Model. Retrieved from Geeks for Geeks: https://www.geeksforgeeks.org/overview-of-big-bang-model/
+      <li>TutorialsCampus. (n.d.). Big Bang Model. Retrieved from Tutorials Campus: https://www.tutorialscampus.com/sdlc/big-bang-model.htm
 </ol>
