@@ -119,7 +119,54 @@ The Evolutionary model combines both the Incremental model and Iterative model. 
     <strong><u>Suitability of Evolutionary model: </u></strong> </br>
     <p>There are some benefits of using the Evolutionary model in this project in that it is fitted to be used in object-oriented development and the model is fitted to manage any changes made to the requirements. However, the project on hand is a smaller project and it will be difficult to break down the deliverables into different increments for the client to test. In addition, changes made to requirements can be made after each increment and not during the phase. Hence, the Evolutionary model is not the best fitted choice in this project.
 </p>
-  <li> Agile 
+  <li> Agile </br>
+  </br>
+    <strong><u>Definition of Agile Model: </u></strong> </br>
+    <p>Agile software development methodology is an iterative and incremental software development approach to facilitate the project team with project management. Delivery of working software to the customer is a split in an iterative fixed time frame known as sprint. The duration of each sprint is decided by both the project team and the client and by the end of each sprint the agile team will produce a fully working and tested usable piece of work. For Agile methodology, during the process of development and delivery where requirements, scope, and results are evaluated continuously, the project has a high adaptability to rapid changes in requirements or plans that are requested by the client. Agile methodology also follows a set of principles and manifesto which upholds its style of work and ethics practices. </br>
+    </br>
+    <strong>The Agile Manifesto</strong></br>
+  "We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
+  <ul>
+    <li>Individuals and interactions over processes and tools
+    <li>Working software over comprehensive documentation
+    <li>Customer collaboration over contract negotiations
+    <li>Responding to change over following a plan
+  </ul>
+  </br>
+  While there is value in the items on the right, we value the items on the left more.” (Scrum.org, n.d.)
+</p>
+</br>
+    <strong><u>Pros: </u></strong> </br>
+    <ul>
+      <li>Increase quality of deliverables
+      <li>Respond better to changing requirements
+      <li>High customer satisfaction
+      <li>Big, complex project are divided into simpler and manageable task that spread across sprints
+      <li>Short sprints enable changes based on feedback from client a lot more easily
+      <li>Decrease time to market
+      <li>The individual effort of each team member is visible during daily scrum meetings
+      <li>Developments are coded and tested during the sprint review
+      <li>Increase project control
+      <li>Increase collaboration and ownership
+      <li>Requires little documentation
+      <li>Cross functional development team
+    </ul>
+    </br>
+    <strong><u>Cons: </u></strong> </br>
+    <ul>
+      <li>Does not specify the exact deadline of certain tasks.
+      <li>The chance of causing a project to fail is high if individual is not cooperative or committed enough
+      <li>Daily meetings sometimes frustrate team members
+      <li>Framework is more likely to be successful with experienced team members
+    </ul>
+    </br>
+    <strong><u>Suitability of Agile model: </u></strong> </br>
+    <p>By following the Agile manifesto, the project the team will be able to focus on the communication between each other rather than letting the processes and tools drive the development. The team will react to possible changing requirements better since discussions constantly occur to ensure that everyone is on the same page. Furthermore, since the project has many different requirements to fulfill, the team will need to be consistently delivering working codes and test cases in our git repository instead of having extensive documentation on how to do it, so that delivery to the stakeholder will be more efficient. Agile values more on communication with the stakeholder rather than only abiding by contract negotiations. With constant and frequent communication with the stakeholders, it allows the team to capture and understand the stakeholders possible change in requirements better so that the team will deliver software as according to the stakeholder expectations. As mentioned, it is predicted that there might be a change in the project scope, hence, being able to respond to changes compared to following a plan, the team can adjust the priorities each time instead of following a stipulated plan from the start.
+Stakeholders will be invited to participate in a User Acceptance Testing during the sprint and look at what has to be delivered and released at the end of each of each sprint so that they are involved and are able to check if the team is on the right track.
+</br>
+</br>
+Agile is a general methodology and approach for software development, under this methodology, there are various frameworks that have emerged from Agile which provides the project team a more specific approach for planning, managing and execution of the project. These frameworks include scrum, Extreme Programming(XP), kanban and more. Among these frameworks, one of the most popular ways to implement Agile would be to adapt and practice the Scrum framework.
+</p>
   <li> Spiral </br>
   </br>
     <strong><u>Definition of Spiral Model: </u></strong> </br>
@@ -139,6 +186,7 @@ Due to the nature of the Spiral Model, this model requires heavy documentation t
   </br>
 However, the constant iterations will allow for changes in requirements easily. </br>
 </p>
+</ul>
     </br>
     <strong><u>Pros: </u></strong> </br>
     <ul>
@@ -173,7 +221,32 @@ Finally, the model doesn’t encourage back tracking in stages, so if the projec
 Therefore, the Spiral Model is not suitable for this project and another SDLC should be considered. </br>
 
 </p>
-  <li> Big Bang
+  <li> Big Bang </br>
+  </br>
+      <strong><u>Definition of Big Bang Model: </u></strong> </br>
+    <p>The Big bang model, as its name implies, adopts an “One Big Boom” approach. This approach gathers all available possible time, effort and resources in software development to deliver a product. The Big Bang Model requires little planning and does not follow any specific procedure or process in development and coding. The development of a software just commence with required funds and resources as an input and the output of the software developed may or may not be meeting the customers requirements, hence this approach is known to be high risk with uncertain outcome. During development, the requirements are understood without much analysis and ideas are implemented as they come along. Even the customer is not sure about what exactly he wants and the requirements are implemented on the fly without much analysis and any changes required may or may not need to revamp the complete software. </p>
+</br>
+    <strong><u>Pros: </u></strong> </br>
+    <ul>
+      <li>Simple model with straightforward approach
+      <li>Gives flexibility to the development team
+      <li>Little or no planning is required
+      <li>Easy to implement
+      <li>Allows additional post-project functionality
+      <li>Suitable for small projects
+      <li>Little or no documentation is required 
+    </ul>
+    </br>
+    <strong><u>Cons: </u></strong> </br>
+    <ul>
+      <li>High risk model with uncertainty
+      <li>Not suitable for complex project with long time span
+      <li>Since little analyse is done on requirements, if requirements are not understood properly, the model will turn out to be costly
+    </ul>
+    </br>
+    <strong><u>Suitability of Big Bang model: </u></strong> </br>
+    <p>Due to the team member's availability and other commitments besides this project, this SDLC model is suitable for the team as it gives flexibility to the development team to be able to work on the code whenever they are free. Furthermore, the team predicts that there might be a change in the project scope and requirements, hence, as this approach is easy to implement due to its simplicity, it helps the team to minimize the time and effort required to deliver the minimal viable product (MVP) but maximize the efficiency and quality of the product.
+</p>
   <li> References </br>
     <ul>
       <li>Try QA. (2013). What are V-model- advantages, disadvantages and when to use it? Retrieved from Try QA: http://tryqa.com/what-is-v-model-advantages-disadvantages-and-when-to-use-it/
@@ -184,5 +257,5 @@ Therefore, the Spiral Model is not suitable for this project and another SDLC sh
       <li>javaTpoint. (n.d.). Incremental Model. Retrieved from javaTpoint: https://www.javatpoint.com/software-engineering-incremental-model 
       <li>javaTpoint. (n.d.). Iterative Model. Retrieved from javaTpoint: https://www.javatpoint.com/software-engineering-iterative-model 
       <li>pp_pankaj. (2019, April 30). Software Engineering | Evolutionary Model. Retrieved from GeeksforGeeks: https://www.geeksforgeeks.org/software-engineering-evolutionary-model/ 
-        
+      <li>Scrum.org. (n.d.). What is Scrum? Retrieved from Scrum.org: https://www.scrum.org/resources/what-is-scrum
 </ol>
