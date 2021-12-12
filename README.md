@@ -14,7 +14,7 @@
   <h2>Latest Changes</h2>
   
   <h2>Task Assigned</h2>
-  <strong><u>Sprint 1</u></strong> </br>
+  <strong><u>Sprint 1: 28th October - 10th November</u></strong> </br>
   <ul>
     <li>Megan - Analysis of V-Shape Model
     <li>Claris - Analysis of Spiral Model
@@ -22,7 +22,7 @@
     <li>Amanda - Analysis of Evolutionary Model
   </ul>
   </br>
-  <strong><u>Sprint 2</u></strong> </br>
+  <strong><u>Sprint 2: 20th November - 12th December</u></strong> </br>
   <ul>
     <li>Megan - US20
     <li>Claris - US1
