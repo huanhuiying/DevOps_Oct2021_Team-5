@@ -1,5 +1,5 @@
 import pytest
-from exit import *
+from us20exit import *
 
 #Test script for US20
 
