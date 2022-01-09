@@ -11,6 +11,9 @@ def checkUserInput(input):
     elif (input == "N"):
         out = print("Not used")
         return(out)
+    else:
+        out = print("Please enter only Y or N")
+        return (out)
 
 input = printBuildingCfm()
 checkUserInput(input)

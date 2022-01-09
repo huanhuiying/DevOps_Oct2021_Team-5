@@ -10,7 +10,7 @@ def test_buildingConfirm():
 #     assert result == "Invalid input. Confirm using building [Y/N]: "
 
 @pytest.mark.parametrize("input, expectedResult",
-[("Y", "Building used"),("N", "Not used")])
+[("Y", "Building used"),("N", "Not used"),("p","Please enter only Y or N")])
 
 def test_buildingConfirm_userInput(input, expectedResult):
     result = checkUserInput(input)
