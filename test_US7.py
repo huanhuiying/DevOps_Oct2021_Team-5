@@ -1,17 +1,29 @@
 import pytest
 from US7 import *
 
-def test_buildingConfirm():
-    result = printBuildingCfm()
-    assert result == "Y" or "N"
+# @pytest.mark.parametrize("input, expectedResult",
+# [("Y", "Building used."),("N", "Cancelled."),("p","Only use Y or N")])
 
-# def test_buildingConfirm_NoInput():
-#     result = opt1()
-#     assert result == "Invalid input. Confirm using building [Y/N]: "
+def test_buildingConfirm_y(capfd):
+    buildingConfirm("Y")
 
-@pytest.mark.parametrize("input, expectedResult",
-[("Y", "Building used"),("N", "Not used"),("p","Please enter only Y or N")])
+    out, er = capfd.readouterr()
+    assert out == "Building confirmed\n"
 
-def test_buildingConfirm_userInput(input, expectedResult):
-    result = checkUserInput(input)
-    assert result == expectedResult
+def test_buildingConfirm_n(capfd):
+    buildingConfirm("N")
+
+    out, er = capfd.readouterr()
+    assert out == "Cancelled\n"
+
+def test_buildingConfirm_others(capfd):
+    buildingConfirm("k")
+
+    out, er = capfd.readouterr()
+    assert out == "Use only 'Y' or 'N' to confirm\n"  
+
+def test_buildingConfirm_int(capfd):
+    buildingConfirm(6)
+
+    out, er = capfd.readouterr()
+    assert out == "Use only 'Y' or 'N' to confirm\n"  
