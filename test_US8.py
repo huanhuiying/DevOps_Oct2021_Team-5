@@ -5,6 +5,13 @@
 import pytest
 from US8 import *
 
+@pytest.mark.parametrize("cfm, expectedResult",
+[("Y", False), ("N", False),("s",True)])
+
+def test_positionConfirm_breakReturn(cfm, expectedResult):
+    result = positionConfirm(cfm)
+    assert result == expectedResult
+
 def test_positionConfirm_y(capfd):
     positionConfirm("Y")
 

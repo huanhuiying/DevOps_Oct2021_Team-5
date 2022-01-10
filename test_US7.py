@@ -1,8 +1,13 @@
 import pytest
 from US7 import *
 
-# @pytest.mark.parametrize("input, expectedResult",
-# [("Y", "Building used."),("N", "Cancelled."),("p","Only use Y or N")])
+
+@pytest.mark.parametrize("cfm, expectedResult",
+[("Y", False), ("N", False),("s",True)])
+
+def test_buildingConfirm_breakReturn(cfm, expectedResult):
+    result = buildingConfirm(cfm)
+    assert result == expectedResult
 
 def test_buildingConfirm_y(capfd):
     buildingConfirm("Y")
