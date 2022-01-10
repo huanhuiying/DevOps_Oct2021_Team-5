@@ -1,4 +1,6 @@
 import random
+from US7 import *
+from US8 import *
 
 turn_counter = 0
 main_menu_options = ["Start new game", "Load saved game"]
@@ -90,12 +92,18 @@ while True:
           if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
               if choosen_configureMenu_option == 1:
                   building_choice = list(building_one)
+                  cfm = input("Confirm using this building type? [Y/N]: ")
+                  buildingConfirm(cfm)
               elif choosen_configureMenu_option == 2:
                   building_choice = list(building_two)
+                  cfm = input("Confirm using this building type? [Y/N]: ")
+                  buildingConfirm(cfm)
                     
               location = list(input("{} ".format("Build where?")))
               print()
-                
+              cfm = input("Confirm building position? [Y/N]: ")
+              positionConfirm(cfm)
+
               place_building(location, building_choice)
 
               turn_counter = 16

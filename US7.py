@@ -27,7 +27,7 @@ def buildingConfirm(cfm):
         else:
             print("Use only 'Y' or 'N' to confirm")      
     except ValueError:
-        print("Use only 'Y' or 'N' to confirm :<")
+        print("Use only 'Y' or 'N' to confirm")
 
 
 #cfm = 6
