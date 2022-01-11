@@ -91,31 +91,26 @@ while True:
             choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
             if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
                 if choosen_configureMenu_option == 1:
+                    building_name = building_one
                     building_choice = list(building_one)
-                    while True:
-                        cfm = input("Confirm using this building? [Y/N]: ")
-                        buildingConfirm(cfm)
-                        if buildingConfirm(cfm)==False:
-                            break
-                        else:
-                            continue
 
                 elif choosen_configureMenu_option == 2:
+                    building_name = building_two
                     building_choice = list(building_two)
-                    while True:
-                        cfm = input("Confirm using this building? [Y/N]: ")
-                        buildingConfirm(cfm)
-                        if buildingConfirm(cfm)==False:
-                            break
-                        else:
-                            continue
-                    
-                location = list(input("{} ".format("Build where?")))
-                print()
 
                 while True:
-                    cfm = input("Confirm placing in this position? [Y/N]: ")
-                    positionConfirm(cfm)
+                    cfm = input(("Confirm using this {} building? [Y/N]: ").format(building_name))
+                    if buildingConfirm(cfm)==False:
+                        break
+                    else:
+                        continue
+                
+                print()
+                location = list(input("{} ".format("Build where?")))
+                #print()
+
+                while True:
+                    cfm = input(("Confirm placing {} in {} position? [Y/N]: ").format(building_name, ''.join(location)))
                     if positionConfirm(cfm)==False:
                         break
                     else:
