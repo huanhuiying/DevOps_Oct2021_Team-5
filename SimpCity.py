@@ -1,15 +1,10 @@
 import random
-<<<<<<< HEAD
 from US6and12 import *
 from US7 import *
 from US8 import *
 from US10 import *
 from us17exit import *
 from us18confirmexit import *
-=======
-from US7 import *
-from US8 import *
->>>>>>> dea88b245093741191a85c3d0c58d535a90958d8
 
 turn_counter = 0
 main_menu_options = ["Start new game", "Load saved game"]
@@ -96,7 +91,6 @@ while True:
         load_file(grid)
 
         while True:
-<<<<<<< HEAD
           turn_counter = turn_counter + 1
           choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
           if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
@@ -138,47 +132,3 @@ while True:
                 continue
         
           
-=======
-            turn_counter = turn_counter + 1
-            choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
-            if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
-                if choosen_configureMenu_option == 1:
-                    building_name = building_one
-                    building_choice = list(building_one)
-
-                elif choosen_configureMenu_option == 2:
-                    building_name = building_two
-                    building_choice = list(building_two)
-
-                while True:
-                    cfm = input(("Confirm using this {} building? [Y/N]: ").format(building_name))
-                    if buildingConfirm(cfm)==False:
-                        break
-                    else:
-                        continue
-                
-                print()
-                location = list(input("{} ".format("Build where?")))
-                #print()
-
-                while True:
-                    cfm = input(("Confirm placing {} in {} position? [Y/N]: ").format(building_name, ''.join(location)))
-                    if positionConfirm(cfm)==False:
-                        break
-                    else:
-                        continue
-
-                place_building(location, building_choice)
-
-                turn_counter = 16
-
-                if exitAfterGameEnd(turn_counter):
-                    turn_counter = 0
-                    grid = []
-                    break
-                
-                else:
-                    continue
-            
-            
->>>>>>> dea88b245093741191a85c3d0c58d535a90958d8
