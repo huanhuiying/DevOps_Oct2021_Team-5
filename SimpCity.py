@@ -95,53 +95,54 @@ while True:
 
         while True:
             turn_counter = turn_counter + 1
-            choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
-            if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
-                if choosen_configureMenu_option == 1:
-                    building_name = building_one
-                    building_choice = list(building_one)
+            while True: 
+                choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
+                if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
+                    if choosen_configureMenu_option == 1:
+                        building_name = building_one
+                        building_choice = list(building_one)
+                        while True:
+                            building_cfm = input(("Confirm using this {} building? [Y/N]: ").format(building_name))
+                            if buildingConfirm(building_cfm) == True:
+                                continue
+                            else:
+                                if building_cfm == "Y":
+                                    break
+                                elif building_cfm == "N":
+                                    break
+                            continue
 
-                elif choosen_configureMenu_option == 2:
-                    building_name = building_two
-                    building_choice = list(building_two)
+                    elif choosen_configureMenu_option == 2:
+                        building_name = building_two
+                        building_choice = list(building_two)
+                    
+                            
                     while True:
-                        building_cfm = input(("Confirm using this {} building? [Y/N]: ").format(building_name))
-                        if buildingConfirm(building_cfm)==True:
+                        location = list(input("{} ".format("Build where?")))
+                        print()
+
+                        if not location_format(location):
+                            print("Invalid location please try again!")
                             continue
                         else:
-                            if building_cfm=="Y":
-                                break
+                            if turn_counter > 1:
+                                if not validate_location(location):
+                                    print("You are not able to place your building here, please try again!")
+                                    continue
+                                else:
+                                    break
                             else:
-                                continue
-                    continue
-
+                                break
                         
-                while True:
-                    location = list(input("{} ".format("Build where?")))
-                    print()
+                    grid = place_building(location, building_choice)
 
-                    if not location_format(location):
-                        print("Invalid location please try again!")
-                        continue
+                    if exitAfterGameEnd(turn_counter):
+                        turn_counter = 0
+                        grid = []
+                        break
+                        
                     else:
-                        if turn_counter > 1:
-                            if not validate_location(location):
-                                print("You are not able to place your building here, please try again!")
-                                continue
-                            else:
-                                break
-                        else:
-                            break
+                        continue
+                            
                     
-                grid = place_building(location, building_choice)
-
-                if exitAfterGameEnd(turn_counter):
-                    turn_counter = 0
-                    grid = []
-                    break
-                    
-                else:
-                    continue
-                    
-            
 
