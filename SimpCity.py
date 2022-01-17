@@ -1,4 +1,5 @@
 import random
+import re
 from US6and12 import *
 from US7 import *
 from US8 import *
@@ -58,7 +59,7 @@ def configure_menu(turn_counter):
     choosen_configureMenu_option =  int(input("Your choice? "))
 
     return choosen_configureMenu_option, building_one, building_two
-  
+
 def place_building(location, building_choice):
     if location[0].lower() == "a":
         column = 4
@@ -74,6 +75,8 @@ def place_building(location, building_choice):
     grid[row][column - 1] = building_choice[0]
     grid[row][column] = building_choice[1]
     grid[row][column +1] = building_choice[2]
+
+    return grid
 
 # Exit to game menu
 
@@ -91,17 +94,32 @@ while True:
         load_file(grid)
 
         while True:
-          turn_counter = turn_counter + 1
-          choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
-          if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
-            if choosen_configureMenu_option == 1:
-                building_choice = list(building_one)
-            elif choosen_configureMenu_option == 2:
-                building_choice = list(building_two)
-            
-            while True:
+            turn_counter = turn_counter + 1
+            choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
+            if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
+                if choosen_configureMenu_option == 1:
+                    building_name = building_one
+                    building_choice = list(building_one)
+
+                elif choosen_configureMenu_option == 2:
+                    building_name = building_two
+                    building_choice = list(building_two)
+                    while True:
+                        building_cfm = input(("Confirm using this {} building? [Y/N]: ").format(building_name))
+                        if buildingConfirm(building_cfm)==True:
+                            continue
+                        else:
+                            if building_cfm=="Y":
+                                break
+                            else:
+                                continue
+                    continue
+
+                        
+                while True:
                     location = list(input("{} ".format("Build where?")))
                     print()
+
                     if not location_format(location):
                         print("Invalid location please try again!")
                         continue
@@ -115,20 +133,15 @@ while True:
                         else:
                             break
                     
+                grid = place_building(location, building_choice)
 
-            location = list(input("{} ".format("Build where?")))
-            print()
+                if exitAfterGameEnd(turn_counter):
+                    turn_counter = 0
+                    grid = []
+                    break
+                    
+                else:
+                    continue
+                    
             
-            place_building(location, building_choice)
 
-            turn_counter = 16
-
-            if exitAfterGameEnd(turn_counter):
-                turn_counter = 0
-                grid = []
-                break
-            
-            else:
-                continue
-        
-          
