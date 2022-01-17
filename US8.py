@@ -18,9 +18,3 @@ def positionConfirm(cfm):
         print("Use only 'Y' or 'N' to confirm")
         return True
 
-# while True:
-#     cfm = input("Y/N: ")
-#     positionConfirm(cfm)
-#     if cfm == "Y" or cfm == "N":
-#         break
-#     else:continue
