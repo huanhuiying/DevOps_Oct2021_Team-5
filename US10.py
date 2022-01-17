@@ -6,6 +6,10 @@ def validate_location(location, grid):
     location = location[0].lower() + location[1]
 
     col = columns.index(location[0])
+
+    if grid[int(location[1]) * 2][column_position[col]] != " ": # check if position has been taken
+        return False
+
     col_row = int(location[1]) * 2
     if col + 1 < 4: # check if value is within range
         if grid[col_row][column_position[col + 1]] != " ": # check from grid that positon is not empty
