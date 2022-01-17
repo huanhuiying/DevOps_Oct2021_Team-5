@@ -88,44 +88,51 @@ while True:
 
         while True:
             turn_counter = turn_counter + 1
-            choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
-            if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
-                if choosen_configureMenu_option == 1:
-                    building_name = building_one
-                    building_choice = list(building_one)
+            while True:
+                choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
+                if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
+                    if choosen_configureMenu_option == 1:
+                        building_name = building_one
+                        building_choice = list(building_one)
+                        while True:
+                            cfm = input(("Confirm using this {} building? [Y/N]: ").format(building_name))
+                            if buildingConfirm(cfm)==True:
+                                continue
+                            else:
+                                if cfm == "Y":
+                                    break
+                                elif cfm == "N":
+                                    break
+                            continue
 
-                elif choosen_configureMenu_option == 2:
-                    building_name = building_two
-                    building_choice = list(building_two)
+                    elif choosen_configureMenu_option == 2:
+                        building_name = building_two
+                        building_choice = list(building_two)
+                        cfm = input(("Confirm using this {} building? [Y/N]: ").format(building_name))
+                    
+                    
+                
+                    print()
+                    location = list(input("{} ".format("Build where?")))
+                    #print()
 
-                while True:
-                    cfm = input(("Confirm using this {} building? [Y/N]: ").format(building_name))
-                    if buildingConfirm(cfm)==False:
+                    while True:
+                        cfm = input(("Confirm placing {} in {} position? [Y/N]: ").format(building_name, ''.join(location)))
+                        if positionConfirm(cfm)==False:
+                            break
+                        else:
+                            continue
+
+                    place_building(location, building_choice)
+
+                    #turn_counter = 16
+
+                    if exitAfterGameEnd(turn_counter):
+                        turn_counter = 0
+                        grid = []
                         break
+                    
                     else:
                         continue
                 
-                print()
-                location = list(input("{} ".format("Build where?")))
-                #print()
-
-                while True:
-                    cfm = input(("Confirm placing {} in {} position? [Y/N]: ").format(building_name, ''.join(location)))
-                    if positionConfirm(cfm)==False:
-                        break
-                    else:
-                        continue
-
-                place_building(location, building_choice)
-
-                turn_counter = 16
-
-                if exitAfterGameEnd(turn_counter):
-                    turn_counter = 0
-                    grid = []
-                    break
                 
-                else:
-                    continue
-            
-            
