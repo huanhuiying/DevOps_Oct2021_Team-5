@@ -1,4 +1,10 @@
 import random
+from US6and12 import *
+from US7 import *
+from US8 import *
+from US10 import *
+from us17exit import *
+from us18confirmexit import *
 
 turn_counter = 0
 main_menu_options = ["Start new game", "Load saved game"]
@@ -88,24 +94,41 @@ while True:
           turn_counter = turn_counter + 1
           choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
           if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
-              if choosen_configureMenu_option == 1:
-                  building_choice = list(building_one)
-              elif choosen_configureMenu_option == 2:
-                  building_choice = list(building_two)
-                    
-              location = list(input("{} ".format("Build where?")))
-              print()
-                
-              place_building(location, building_choice)
-
-              turn_counter = 16
-
-              if exitAfterGameEnd(turn_counter):
-                  turn_counter = 0
-                  grid = []
-                  break
-                
-              else:
-                  continue
+            if choosen_configureMenu_option == 1:
+                building_choice = list(building_one)
+            elif choosen_configureMenu_option == 2:
+                building_choice = list(building_two)
             
+            while True:
+                    location = list(input("{} ".format("Build where?")))
+                    print()
+                    if not location_format(location):
+                        print("Invalid location please try again!")
+                        continue
+                    else:
+                        if turn_counter > 1:
+                            if not validate_location(location):
+                                print("You are not able to place your building here, please try again!")
+                                continue
+                            else:
+                                break
+                        else:
+                            break
+                    
+
+            location = list(input("{} ".format("Build where?")))
+            print()
+            
+            place_building(location, building_choice)
+
+            turn_counter = 16
+
+            if exitAfterGameEnd(turn_counter):
+                turn_counter = 0
+                grid = []
+                break
+            
+            else:
+                continue
+        
           
