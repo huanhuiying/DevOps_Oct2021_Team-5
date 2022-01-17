@@ -98,7 +98,7 @@ while True:
                 
               place_building(location, building_choice)
 
-              turn_counter = 16
+              #turn_counter = 16
 
               if exitAfterGameEnd(turn_counter):
                   turn_counter = 0
