@@ -96,6 +96,7 @@ while True:
         while True:
             turn_counter = turn_counter + 1
             choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
+            # build houses
             if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
                 if choosen_configureMenu_option == 1:
                     building_choice = list(building_one)
@@ -103,16 +104,15 @@ while True:
                 elif choosen_configureMenu_option == 2:
                     building_choice = list(building_two)
                     building_name = building_two
-                    while True:
-                        building_cfm = input(("Confirm using {}? [Y/N]: ").format(building_name))
-                        if buildingConfirm(building_cfm)==True:
-                            continue
-                        else:
-                            if building_cfm=="Y":
-                                break
-                            else:
-                                continue
-                        
+                    
+                    building_cfm = input(("Confirm using {}? [Y/N]: ").format(building_name))
+                    if buildingConfirm(building_cfm)==True:
+                        continue
+                    elif building_cfm == "N":
+                        break
+                    else:
+                        break
+                    
                 while True:
                     location = list(input("{} ".format("Build where?")))
                     location_cfm = input(("Confirm using {} on location {}? [Y/N]: ").format(building_name,''.join(location)))
@@ -145,4 +145,53 @@ while True:
                     break
                     
                 else:
+                    continue
+
+            #exit from game to main menu
+            elif choosen_configureMenu_option ==0:
+                exitFlag = True
+                exitCount = 0
+                exitInput = ""
+
+                saveFlag = True
+                saveCount = 0
+                saveInput = ""
+
+                confirmExitBool = True
+
+                printExitPrompt(exitFlag, exitCount, exitInput)
+                while True:
+                    exitInput = input()
+                    exitFlag, exitCount = checkUserInput(exitInput, exitCount)
+
+                    if(exitFlag == True):
+                        printExitPrompt(exitFlag, exitCount, exitInput)
+                        continue
+                    elif(exitFlag == False):
+                        exitInputBool = checkValidInput(exitInput)
+                        if(exitInputBool == True):
+                            printSavePrompt(saveFlag, saveCount, saveInput)
+                            while True:
+                                saveInput = input()
+                                saveFlag, saveCount = checkSaveInput(saveInput, saveCount)
+                                if(saveFlag == True):
+                                    printSavePrompt(saveFlag, saveCount, saveInput)
+                                    continue
+                                elif(saveFlag == False):
+                                    checkValidSaveInput(saveInput)
+                                    turn_counter = 0
+                                    break
+                            break
+                        elif(exitInputBool == False):
+                            print("Decision to exit game to the main menu is cancelled.")
+                            confirmExitBool = False
+                            break
+                
+                print(confirmExitBool)
+                if(confirmExitBool == True):
+                    turn_counter = 0
+                    grid = []
+                    break
+                elif(confirmExitBool == False):
+                    cancelledTurnCount = turn_counter
                     continue
