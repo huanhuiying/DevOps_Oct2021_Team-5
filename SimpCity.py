@@ -99,25 +99,42 @@ while True:
             if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
                 if choosen_configureMenu_option == 1:
                     building_choice = list(building_one)
+                    building_name = building_one
                 elif choosen_configureMenu_option == 2:
                     building_choice = list(building_two)
+                    building_name = building_two
+                    while True:
+                        building_cfm = input(("Confirm using {}? [Y/N]: ").format(building_name))
+                        if buildingConfirm(building_cfm)==True:
+                            continue
+                        else:
+                            if building_cfm=="Y":
+                                break
+                            else:
+                                continue
                         
                 while True:
                     location = list(input("{} ".format("Build where?")))
+                    location_cfm = input(("Confirm using {} on location {}? [Y/N]: ").format(building_name,''.join(location)))
                     print()
-
-                    if not location_format(location):
-                        print("Invalid location please try again!")
+                    if positionConfirm(location_cfm)==True:
                         continue
                     else:
-                        if turn_counter > 1:
-                            if not validate_location(location,grid):
-                                print("You are not able to place your building here, please try again!")
+                        if location_cfm=="Y": 
+                            if not location_format(location):
+                                print("Invalid location please try again!")
                                 continue
                             else:
-                                break
+                                if turn_counter > 1:
+                                    if not validate_location(location,grid):
+                                        print("You are not able to place your building here, please try again!")
+                                        continue
+                                    else:
+                                        break
+                                else:
+                                    break
                         else:
-                            break
+                            continue
 
                     
                 grid = place_building(location, building_choice)
