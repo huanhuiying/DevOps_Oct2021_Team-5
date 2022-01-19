@@ -104,25 +104,33 @@ while True:
                 elif choosen_configureMenu_option == 2:
                     building_choice = list(building_two)
                     building_name = building_two
-
-                    while True: 
-                        building_cfm = input(("Confirm using {}? [Y/N]: ").format(building_name))
-                        if buildingConfirm(building_cfm)==True:
-                            continue
+                         
+                while True:
+                    building_cfm = input(("Confirm using {}? [Y/N]: ").format(building_name))
+                    if buildingConfirm(building_cfm):
+                        continue
+                    else:
+                        if building_cfm.lower() == "y":
+                            confirmBuildingBool = True
+                            break
                         else:
-                            if building_cfm == "Y":
-                                break
-                            else:
-                                continue
-                    
+                            confirmBuildingBool = False
+                            break
+                        
+                print()      
+                if not confirmBuildingBool:
+                    turn_counter = turn_counter - 1
+                    continue
+
+                     
                 while True:
                     location = list(input("{} ".format("Build where?")))
                     location_cfm = input(("Confirm using {} on location {}? [Y/N]: ").format(building_name,''.join(location)))
                     print()
-                    if positionConfirm(location_cfm)==True:
+                    if positionConfirm(location_cfm):
                         continue
                     else:
-                        if location_cfm=="Y": 
+                        if location_cfm.lower()=="y": 
                             if not location_format(location):
                                 print("Invalid location please try again!")
                                 continue
@@ -147,6 +155,7 @@ while True:
                     break
                     
                 else:
+                    cancelledTurnCount = 0
                     continue
 
             #[0] exit from game to main menu
@@ -195,7 +204,7 @@ while True:
                     grid = []
                     break
                 elif(confirmExitBool == False):
-                    cancelledTurnCount = turn_counter
+                    turn_counter = turn_counter - 1
                     continue
 
     #load save file
