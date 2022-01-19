@@ -104,14 +104,16 @@ while True:
                 elif choosen_configureMenu_option == 2:
                     building_choice = list(building_two)
                     building_name = building_two
-                    
-                    building_cfm = input(("Confirm using {}? [Y/N]: ").format(building_name))
-                    if buildingConfirm(building_cfm)==True:
-                        continue
-                    elif building_cfm == "N":
-                        break
-                    else:
-                        break
+
+                    while True: 
+                        building_cfm = input(("Confirm using {}? [Y/N]: ").format(building_name))
+                        if buildingConfirm(building_cfm)==True:
+                            continue
+                        else:
+                            if building_cfm == "Y":
+                                break
+                            else:
+                                continue
                     
                 while True:
                     location = list(input("{} ".format("Build where?")))
@@ -147,7 +149,7 @@ while True:
                 else:
                     continue
 
-            #exit from game to main menu
+            #[0] exit from game to main menu
             elif choosen_configureMenu_option ==0:
                 exitFlag = True
                 exitCount = 0
@@ -195,3 +197,11 @@ while True:
                 elif(confirmExitBool == False):
                     cancelledTurnCount = turn_counter
                     continue
+
+    #load save file
+    elif choosen_menu_option == 2:
+        print ("Saving")
+    
+    #Close application
+    elif choosen_menu_option == 0:
+        print ("Exiting application...")
