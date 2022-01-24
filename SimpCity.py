@@ -6,6 +6,7 @@ from US8 import *
 from US10 import *
 from us17exit import *
 from us18confirmexit import *
+from US22 import *
 
 turn_counter = 0
 main_menu_options = ["Start new game", "Load saved game"]
@@ -213,4 +214,21 @@ while True:
     
     #Close application
     elif choosen_menu_option == 0:
-        print ("Exiting application...")
+        while True:
+            exitCfm = input("Exit the application? [Y/N]: ")
+            if exitConfirm(exitCfm):
+                continue
+            else:
+                if exitCfm.lower() =="y":
+                    exitAppBool = True
+                    break
+                else:
+                    exitAppBool = False
+                    break
+            
+        if exitAppBool == False:
+            continue
+        else:
+            "Exiting Application..."
+            exit()
+
