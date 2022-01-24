@@ -6,6 +6,7 @@ from US8 import *
 from US10 import *
 from us17exit import *
 from us18confirmexit import *
+from US13 import *
 
 turn_counter = 0
 main_menu_options = ["Start new game", "Load saved game"]
@@ -95,7 +96,13 @@ while True:
 
         while True:
             turn_counter = turn_counter + 1
-            choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
+            while True:
+                choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
+                configVal = configMenuVal(choosen_configureMenu_option)
+                if configVal == True:
+                    continue
+                else:
+                    break
             # build houses
             if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
                 if choosen_configureMenu_option == 1:
@@ -206,6 +213,11 @@ while True:
                 elif(confirmExitBool == False):
                     turn_counter = turn_counter - 1
                     continue
+            
+            else:
+                print("Please choose a valid option.")
+                turn_counter = turn_counter -1
+                continue
 
     #load save file
     elif choosen_menu_option == 2:
