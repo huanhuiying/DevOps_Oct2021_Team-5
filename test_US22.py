@@ -1,5 +1,5 @@
 import pytest
-from US4and22 import *
+from US22 import *
 
 # US4 - As a user, I want to be able to select the "Exit"
 #  option from the main menu so that I can end the program.
@@ -18,7 +18,7 @@ def test_exitConfirm_y(capfd):
     result = exitConfirm("Y")
 
     out, er = capfd.readouterr()
-    assert out == "Exit confirmed.\n"
+    assert out == "Exit confirmed.\nExiting application..."
     assert result == False
 
 def test_exitConfirm_n(capfd):
