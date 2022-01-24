@@ -7,18 +7,20 @@ from US22 import *
 # US22 - As a user, I want to be shown a prompt to confirm my 
 # choice to end the program so I don't accidentally end the program. 
 
-def test_exitConfirm(cfm, expectedResult):
-    result = exitConfirm(cfm)
-    assert result == expectedResult
+
 
 @pytest.mark.parametrize("cfm, expectedResult",
 [("Y", False), ("N", False),("s",True)])
+
+def test_exitConfirm(cfm, expectedResult):
+    result = exitConfirm(cfm)
+    assert result == expectedResult
 
 def test_exitConfirm_y(capfd):
     result = exitConfirm("Y")
 
     out, er = capfd.readouterr()
-    assert out == "Exit confirmed.\nExiting application..."
+    assert out == "Exit confirmed.\n"
     assert result == False
 
 def test_exitConfirm_n(capfd):
