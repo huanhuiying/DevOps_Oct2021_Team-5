@@ -23,4 +23,4 @@ def test_configMenuVal_string(capfd):
     configMenuVal("g")
 
     out, er = capfd.readouterr()
-    assert out =="Please choose valid options.\n"
+    assert out =="Please choose valid options. \n"

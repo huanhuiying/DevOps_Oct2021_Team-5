@@ -1,6 +1,7 @@
 def configMenuVal(option):
     try: 
-        if 0 <= option <=5:
+        option =int(option)
+        if option==1 or option==2 or option==3 or option==4 or option==5 or option==0:
             return False
         else:
             print ("Please choose valid options.")
