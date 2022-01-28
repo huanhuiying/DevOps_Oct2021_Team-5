@@ -93,16 +93,18 @@ while True:
     if choosen_menu_option == 1:
         #load game map
         load_file(grid)
-
         while True:
             turn_counter = turn_counter + 1
             while True:
                 choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
                 configVal = configMenuVal(choosen_configureMenu_option)
+                configValBool = False
                 if configVal == True:
                     continue
                 else:
+                    configValBool = True
                     break
+            choosen_configureMenu_option = int(choosen_configureMenu_option)
             # build houses
             if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
                 if choosen_configureMenu_option == 1:
@@ -129,7 +131,7 @@ while True:
                     turn_counter = turn_counter - 1
                     continue
 
-                     
+                    
                 while True:
                     location = list(input("{} ".format("Build where?")))
                     location_cfm = input(("Confirm using {} on location {}? [Y/N]: ").format(building_name,''.join(location)))
