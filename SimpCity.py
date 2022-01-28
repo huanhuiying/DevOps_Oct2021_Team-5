@@ -57,7 +57,7 @@ def configure_menu(turn_counter):
     print()
     print("{}. {}".format("5", "Save game"))
     print("{}. {}".format("0", "Exit to main menu"))
-    choosen_configureMenu_option =  int(input("Your choice? "))
+    choosen_configureMenu_option =  (input("Your choice? "))
 
     return choosen_configureMenu_option, building_one, building_two
 
@@ -111,7 +111,7 @@ while True:
                 elif choosen_configureMenu_option == 2:
                     building_choice = list(building_two)
                     building_name = building_two
-                         
+                        
                 while True:
                     building_cfm = input(("Confirm using {}? [Y/N]: ").format(building_name))
                     if buildingConfirm(building_cfm):
@@ -214,10 +214,6 @@ while True:
                     turn_counter = turn_counter - 1
                     continue
             
-            else:
-                print("Please choose a valid option.")
-                turn_counter = turn_counter -1
-                continue
 
     #load save file
     elif choosen_menu_option == 2:
