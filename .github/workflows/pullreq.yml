@@ -18,11 +18,11 @@ jobs:
     - name: Checkout Own Repo
       uses: actions/checkout@v2
       with: 
-        repository: huanhuiying/DevOps_Oct2021_Team5
+        repository: huanhuiying/DevOps_Oct2021_Team-5
     - name: Checkout Test Script
       uses: actions/checkout@v2
       with:
-        repository: huanhuiying/DevOps_Oct2021_Team5
+        repository: huanhuiying/DevOps_Oct2021_Team-5
         path: tests
         
     - name: Begin Pytest
