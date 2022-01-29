@@ -19,10 +19,15 @@ jobs:
       uses: actions/checkout@v2
       with: 
         repository: huanhuiying/DevOps_Oct2021_Team-5
+    - name: Checkout Test Script
+      uses: actions/checkout@v2
+      with:
+        repository: huanhuiying/DevOps_Oct2021_Team-5
+        path: tests
         
     - name: Begin Pytest
       run: |
-        mv ./tests/*.*./
+        mv ./tests/*.* ./
         pytest --cov -v --junitxml=report.xml
     - if: ${{failure()}}       
       name: Create Issues
