@@ -213,6 +213,7 @@ while True:
                     grid = []
                     break
                 elif(confirmExitBool == False):
+                    
                     turn_counter = turn_counter - 1
                     continue
             
