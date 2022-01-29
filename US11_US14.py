@@ -10,8 +10,13 @@ def deduct_building_chosen(selected_buidling, no_buildings):
 
 # US 14
 def show_remaining_building(no_buildings):
+    remaining_building_print = []
     print("Building        Remaining")
+    remaining_building_print.append("Building        Remaining")
     print("--------        --------")
+    remaining_building_print.append("--------        --------")
     for building in no_buildings:
         print("{}             {}".format(building, str(no_buildings[building])))
+        remaining_building_print.append("{}             {}".format(building, str(no_buildings[building])))
 
+    return remaining_building_print
