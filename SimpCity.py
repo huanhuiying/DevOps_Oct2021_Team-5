@@ -6,6 +6,9 @@ from US8 import *
 from US10 import *
 from us17exit import *
 from us18confirmexit import *
+from US13 import *
+from US11_US14 import *
+from US22 import *
 
 turn_counter = 0
 main_menu_options = ["Start new game", "Load saved game"]
@@ -56,7 +59,7 @@ def configure_menu(turn_counter):
     print()
     print("{}. {}".format("5", "Save game"))
     print("{}. {}".format("0", "Exit to main menu"))
-    choosen_configureMenu_option =  int(input("Your choice? "))
+    choosen_configureMenu_option =  input("Your choice? ")
 
     return choosen_configureMenu_option, building_one, building_two
 
@@ -95,7 +98,16 @@ while True:
 
         while True:
             turn_counter = turn_counter + 1
-            choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
+            while True:
+                choosen_configureMenu_option, building_one, building_two = configure_menu(turn_counter)
+                configVal = configMenuVal(choosen_configureMenu_option)
+                configValBool = False
+                if configVal == True:
+                    continue
+                else:
+                    configValBool = True
+                    break
+            choosen_configureMenu_option = int(choosen_configureMenu_option)
             # build houses
             if choosen_configureMenu_option == 1 or choosen_configureMenu_option == 2:
                 if choosen_configureMenu_option == 1:
@@ -213,4 +225,19 @@ while True:
     
     #Close application
     elif choosen_menu_option == 0:
-        print ("Exiting application...")
+        while True:
+            exitCfm = input("Exit the application? [Y/N]: ")
+            if exitConfirm(exitCfm):
+                continue
+            else:
+                if exitCfm.lower() == "y":
+                    exitAppBool = True
+                    break
+                else:
+                    exitAppBool = False
+                    break
+        if exitAppBool == False:
+            continue
+        else:
+            print("Exiting Application...")
+            exit()
