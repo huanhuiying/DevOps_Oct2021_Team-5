@@ -95,6 +95,7 @@ while True:
     if choosen_menu_option == 1:
         #load game map
         load_file(grid)
+        no_buildings = {"BCH": 8, "FAC": 8, "HSE": 8, "SHP": 8, "HWY": 8}
 
         while True:
             turn_counter = turn_counter + 1
@@ -123,8 +124,15 @@ while True:
                         continue
                     else:
                         if building_cfm.lower() == "y":
-                            confirmBuildingBool = True
-                            break
+                            deduct_validation = deduct_building_chosen(building_name, no_buildings)
+                            #print(deduct_validation)
+                            if deduct_validation:
+                                confirmBuildingBool=True
+                                break
+                            else:
+                                print("The building selected has been used up, please select another building!")
+                                confirmBuildingBool = False
+                                break
                         else:
                             confirmBuildingBool = False
                             break
@@ -158,7 +166,6 @@ while True:
                         else:
                             continue
 
-                    
                 grid = place_building(location, building_choice)
 
                 if exitAfterGameEnd(turn_counter):
@@ -169,6 +176,11 @@ while True:
                 else:
                     cancelledTurnCount = 0
                     continue
+            
+            #[3] See remaining buildings
+            if choosen_configureMenu_option == 3:
+                show_remaining_building(no_buildings)
+                turn_counter = turn_counter-1
 
             #[0] exit from game to main menu
             elif choosen_configureMenu_option ==0:
