@@ -1,5 +1,7 @@
+from fileinput import filename
 import random
 import re
+from US2_16 import save_game
 from US6and12 import *
 from US7 import *
 from US8 import *
@@ -9,6 +11,7 @@ from us18confirmexit import *
 from US13 import *
 from US11_US14 import *
 from US22 import *
+from US2_16 import * 
 
 turn_counter = 0
 main_menu_options = ["Start new game", "Load saved game"]
@@ -27,8 +30,8 @@ def main_menu(main_menu_options):
     return (choosen_menu_option)
 
 #function to load game map
-def load_file(grid):
-    file = open("game_grid.csv", "r")
+def load_file(grid,filename):
+    file = open(filename, "r")
     for line in file:
         line = line.strip('\n')
         grid.append(list(line))
@@ -89,12 +92,20 @@ def exitAfterGameEnd(tc):
     else:
         return False
 
+
 # function is called and choosen menu option is return
 while True:
     choosen_menu_option = main_menu(main_menu_options)
-    if choosen_menu_option == 1:
+
+    if choosen_menu_option == 1 or choosen_menu_option ==2:
         #load game map
-        load_file(grid)
+        if choosen_menu_option==1:
+            filename = 'game_grid.csv'
+        else:
+            filename = input("Enter the name of your save file: ")
+            filename = str(filename+'.csv')
+        
+        load_file(grid, filename)
         no_buildings = {"BCH": 8, "FAC": 8, "HSE": 8, "SHP": 8, "HWY": 8}
 
         while True:
@@ -182,6 +193,10 @@ while True:
                 show_remaining_building(no_buildings)
                 turn_counter = turn_counter-1
 
+            #[5] Save game
+            if choosen_configureMenu_option == 5:
+                save_game(grid)
+
             #[0] exit from game to main menu
             elif choosen_configureMenu_option ==0:
                 exitFlag = True
@@ -231,10 +246,6 @@ while True:
                     turn_counter = turn_counter - 1
                     continue
 
-    #load save file
-    elif choosen_menu_option == 2:
-        print ("Saving")
-    
     #Close application
     elif choosen_menu_option == 0:
         while True:
