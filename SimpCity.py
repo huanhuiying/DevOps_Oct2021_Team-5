@@ -196,6 +196,9 @@ while True:
             #[5] Save game
             if choosen_configureMenu_option == 5:
                 save_game(grid)
+                save_building(no_buildings)
+                save_turnCount(turn_counter)
+                turn_counter = turn_counter-1 
 
             #[0] exit from game to main menu
             elif choosen_configureMenu_option ==0:
