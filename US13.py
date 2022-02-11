@@ -7,6 +7,7 @@ def configMenuVal(option):
             print ("Please choose valid options.")
             return True
     except ValueError:
+<<<<<<< HEAD
         print ("Please choose valid options.")
         return True
 
@@ -20,4 +21,7 @@ def mainMenuVal(main_option):
             return True
     except ValueError:
         print("Please choose valid options.")
+=======
+        print ("Please choose valid options. ")
+>>>>>>> e5f643652bfe8fb7bae2d5916fd614a97add88e1
         return True
