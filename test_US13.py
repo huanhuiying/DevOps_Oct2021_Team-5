@@ -23,4 +23,23 @@ def test_configMenuVal_string(capfd):
     configMenuVal("g")
 
     out, er = capfd.readouterr()
-    assert out =="Please choose valid options. \n"
+    assert out =="Please choose valid options.\n"
+
+@pytest.mark.parametrize("main_option, expectedResult",
+[(1, False),(2, False),(0, False),(4,True),('a',True),('gsdf',True),(9,True)])
+
+def test_mainMenuVal_breakReturn(main_option, expectedResult):
+    result = mainMenuVal(main_option)
+    assert result == expectedResult
+
+def test_mainMenuVal_invalid(capfd):
+    mainMenuVal(7)
+
+    out, er = capfd.readouterr()
+    assert out == "Please choose valid options.\n"
+
+def test_mainMenuVal_string(capfd):
+    mainMenuVal("gdf")
+
+    out, er = capfd.readouterr()
+    assert out =="Please choose valid options.\n"
