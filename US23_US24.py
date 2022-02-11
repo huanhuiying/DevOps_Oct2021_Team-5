@@ -7,7 +7,7 @@ highscore_dict = ast.literal_eval(highscore_file)
 # US23
 def print_leaderboard(highscore_dict):
     leaderboard_names = []
-    sorted_highscore_dict = dict(sorted(highscore_dict.items(), key = lambda item: item[1]))
+    sorted_highscore_dict = dict(sorted(highscore_dict.items(), key = lambda item: item[1], reverse = True))
     print('--------- HIGH SCORES ---------')
     print('Pos Player                Score')
     print('--- ------                -----')
@@ -30,8 +30,8 @@ def print_leaderboard(highscore_dict):
 # US24
 def check_position(score, highscore_dict):
     scores = list(highscore_dict.values())
-    scores = scores.append(score)
-    scores.sort()
+    scores.append(score)
+    scores.sort(reverse = True)
     position = scores.index(score) + 1
     return position
 
