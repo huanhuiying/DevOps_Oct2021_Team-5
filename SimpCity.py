@@ -199,6 +199,7 @@ while True:
                 save_building(no_buildings)
                 save_turnCount(turn_counter)
                 turn_counter = turn_counter-1 
+                continue
 
             #[0] exit from game to main menu
             elif choosen_configureMenu_option ==0:

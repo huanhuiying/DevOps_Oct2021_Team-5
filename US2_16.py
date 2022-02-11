@@ -1,4 +1,3 @@
-
 def save_game(grid):
     fileName = "savecontent/savefile.csv"
     file=open(fileName,'w')
@@ -12,6 +11,7 @@ def save_game(grid):
     for h in range(len(export_map)):
         file.write('{}\n'.format(export_map[h]))
     print("Your progress has been saved!")
+    return export_map
 
 def save_building(no_buildings):
     buildingFile = "savecontent/buildingCount.csv"
@@ -23,5 +23,8 @@ def save_building(no_buildings):
 def save_turnCount(turncount):
     fileName = "savecontent/turncount.csv"
     file=open(fileName, 'w')
+    turncount = str(turncount)
     file.write(turncount)
     return turncount
+
+
