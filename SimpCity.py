@@ -95,14 +95,8 @@ def exitAfterGameEnd(tc):
 
 # function is called and choosen menu option is return
 while True:
-<<<<<<< HEAD
-    choosen_menu_option = main_menu(main_menu_options)
-
-    if choosen_menu_option == 1 or choosen_menu_option ==2:
-=======
     choosen_menu_option = int(main_menu(main_menu_options))
     if choosen_menu_option == 1:
->>>>>>> 5ed1d6c2fd3f2e638a8c6af598932d7fbee7002e
         #load game map
         if choosen_menu_option==1:
             filename = 'game_grid.csv'
