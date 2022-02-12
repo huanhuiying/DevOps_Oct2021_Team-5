@@ -154,3 +154,6 @@ def getShpScore(loc):
     else:
         count = 1
     return count
+
+def locationEmpty():
+    return 0
