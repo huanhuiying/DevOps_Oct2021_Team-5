@@ -99,13 +99,13 @@ def test_getHSEScore(location, expectedResult):
 #If Building is HWY
 
 #["a4", "b4", "c4", "d4"]
-#["a1", "a2", "b3", "c4"]
+#["a1", "b1", "a2", "b3", "c4"]
 
 #column = [4, 10, 16, 22] #A, B, C, D
 #row = [2, 4, 6, 8]
 
 @pytest.mark.parametrize("locArray, hwyResult",
-[([[4, 8], [10, 8], [16, 8], [22, 8]], 4), (["a1", "a2", "b3", "c4"], [2, 1, 1])])
+[([[4, 8], [10, 8], [16, 8], [22, 8]], 4), ([[4, 2], [10, 2], [4, 4], [10, 6], [16, 8]], [2, 1, 1, 1])])
 
 def test_getHWYArray(locArray, hwyResult):
     result = getHWYArray(locArray)
