@@ -38,7 +38,27 @@ jobs:
           assignees: ${{github.actor}}
           labels: worflow-failed
           body: Workflow failed for commit ${{github.sha}} @ ${{github.ref}}       
-
+          
+    - if : ${{failure()}}
+      name: Test Step for Discord Action
+      id: discordActionFail
+      uses: Poss111/discord-hook-action@v1.6.12
+      with:
+          discord-hook-url: 'https://discord.com/api/webhooks/942005914729345025/060oCpG8cOHyWMgIZpkhdw3JSBcD99lWMdLNz0RsbbBpzyNNBxgNtw0zgHQ-k388QMyB'
+          title: 'Unit Test Results'
+          message: 'Unit Tests Failed'
+          message-color: '15548997'
+          
+    - if : ${{success()}}
+      name: Test Step for Discord Action
+      id: discordActionPass
+      uses: Poss111/discord-hook-action@v1.6.12
+      with:
+          discord-hook-url: 'https://discord.com/api/webhooks/942005914729345025/060oCpG8cOHyWMgIZpkhdw3JSBcD99lWMdLNz0RsbbBpzyNNBxgNtw0zgHQ-k388QMyB'
+          title: 'Unit Test Results'
+          message: 'Unit Tests Passed'
+          message-color: '5763719'
+          
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action@v1.24
       if: always()
