@@ -64,3 +64,40 @@ def getFACTotalScore(a):
     for i in a:
         count = count + i
     return count
+
+def getHSEScore(loc):
+    column = [4, 10, 16, 22] #A, B, C, D
+    row = [2, 4, 6, 8]
+    c = loc[0]
+    r = loc[1]
+
+    adjLocs = [] # location adjacent to House
+    indexRow = row.index(r) # check left and right
+    if indexRow + 1 < 4: # check right
+        build = grid[row[indexRow + 1]][c - 1] + grid[row[indexRow + 1]][c] + grid[row[indexRow + 1]][c + 1]
+        adjLocs.append(build)
+    if indexRow - 1 > -1: # check left
+        build = grid[row[indexRow - 1]][c - 1] + grid[row[indexRow - 1]][c] + grid[row[indexRow - 1]][c + 1]
+        adjLocs.append(build)
+
+    indexCol = column.index(c)
+    if indexCol + 1 < 4: # check up
+        build = grid[r][column[indexCol + 1] - 1] + grid[r][column[indexCol + 1]] + grid[r][column[indexCol + 1] + 1]
+        adjLocs.append(build)
+    if indexCol - 1 > -1: # check down
+        build = grid[r][column[indexCol - 1] - 1] + grid[r][column[indexCol - 1]] + grid[r][column[indexCol - 1] + 1]
+        adjLocs.append(build)
+
+    count = 0
+    for loc in adjLocs:
+        if loc == "FAC":
+            count == 1
+            break
+        else:
+            if loc == "HSE" or loc == "SHP":
+                count += 1
+            elif loc == "BCH":
+                count += 2
+
+    return count
+
