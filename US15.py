@@ -36,4 +36,10 @@ def findType(loc, grid):
                     return ""
 
 
-
+def getBCHScore(loc):
+    c = loc[0]
+    if c == 4 or c == 22: # A or D
+        return 3
+    else:
+        return 1
+    
