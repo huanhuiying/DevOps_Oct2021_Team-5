@@ -57,8 +57,8 @@ def test_TypeOfBuilding(location, expectedResult):
 @pytest.mark.parametrize("location, expectedResult",
 [([4, 4], 3), ([4, 6], 3), ([22, 4], 3), ([16, 6], 1)])
 
-def test_getBCHScore(location, type, expectedResult):
-    result = getBCHScore(location, type)
+def test_getBCHScore(location, expectedResult):
+    result = getBCHScore(location)
     assert result == expectedResult
 
 #If Building is FAC
