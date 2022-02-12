@@ -101,4 +101,13 @@ def getHSEScore(loc):
 
     return count
 
-
+def getHWYArray(locArray):
+    rArray = []
+    hwyArray = []
+    for i in locArray:
+        locr = i[1]
+        rArray.append(locr)
+    for r in rArray:
+        repeatCount = rArray.count(r)
+        hwyArray.append(repeatCount)
+    return hwyArray
