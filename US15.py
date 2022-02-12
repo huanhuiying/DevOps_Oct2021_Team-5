@@ -42,4 +42,21 @@ def getBCHScore(loc):
         return 3
     else:
         return 1
-    
+
+def getFACScoreArray(count):
+    if(count == 1):
+        return 1
+    elif(count == 2):
+        return [2, 2]
+    elif(count == 3):
+        return [3, 3, 3]
+    elif(count == 4):
+        return [4, 4, 4 ,4]
+    elif(count > 4):
+        cA = [4, 4, 4 ,4]
+        remain = count - 4
+        for i in range(remain):
+            cA.append(1)
+        return cA
+
+
