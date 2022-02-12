@@ -105,7 +105,7 @@ def test_getHSEScore(location, expectedResult):
 #row = [2, 4, 6, 8]
 
 @pytest.mark.parametrize("locArray, hwyResult",
-[([[4, 8], [10, 8], [16, 8], [22, 8]], 4), ([[4, 2], [10, 2], [4, 4], [10, 6], [16, 8]], [2, 1, 1, 1])])
+[([[4, 8], [10, 8], [16, 8], [22, 8]], [4, 4, 4, 4]), ([[4, 2], [10, 2], [4, 4], [10, 6], [16, 8]], [2, 2, 1, 1, 1])])
 
 def test_getHWYArray(locArray, hwyResult):
     result = getHWYArray(locArray)
@@ -114,7 +114,7 @@ def test_getHWYArray(locArray, hwyResult):
 #Calculate Total Score of HWY
 
 @pytest.mark.parametrize("hwyArray, hwyResult",
-[([2, 1, 1], 4), ([3, 1, 2], 6)])
+[([4, 4, 4, 4], 16), ([2, 2, 1, 1, 1], 7)])
 
 def test_getHWYTotalScore(hwyArray, hwyResult):
     result = getHWYTotalScore(hwyArray)
