@@ -34,3 +34,6 @@ def findType(loc, grid):
                     return "SHP"
                 elif b == "   ":
                     return ""
+
+
+
