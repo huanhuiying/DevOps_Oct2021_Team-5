@@ -29,16 +29,16 @@ for line in file:
 #column = [4, 10, 16, 22] #A, B, C, D
 #row = [2, 4, 6, 8]
 
-#a1
-#a2
-#c3
-#b3
-#c4
-#d4
-#b2
+#a1 (Correct)
+#a2 (Correct)
+#c2 (Correct)
+#b3 (Correct)
+#c4 (Correct)
+#d4 (Correct)
+#b2 (Correct)
 
 @pytest.mark.parametrize("location, expectedResult",
-[([4, 2], "SHP"), ([4, 4], "BCH"), ([16, 6], "HSE"), ([10, 6], "SHP"), ([16, 8], "HWY"), ([22, 8], ""), ([10, 4], "HSE")])
+[([4, 2], "SHP"), ([4, 4], "BCH"), ([16, 4], "HSE"), ([10, 6], "SHP"), ([16, 8], "HWY"), ([22, 8], ""), ([10, 4], "HSE")])
 
 #If building, check type (Need Test)
 def test_TypeOfBuilding(location, expectedResult):
