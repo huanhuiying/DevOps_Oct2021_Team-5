@@ -111,3 +111,9 @@ def getHWYArray(locArray):
         repeatCount = rArray.count(r)
         hwyArray.append(repeatCount)
     return hwyArray
+
+def getHWYTotalScore(hwyArray):
+    count = 0
+    for i in hwyArray:
+        count = count + i
+    return count
