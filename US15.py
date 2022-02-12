@@ -59,4 +59,8 @@ def getFACScoreArray(count):
             cA.append(1)
         return cA
 
-
+def getFACTotalScore(a):
+    count = 0
+    for i in a:
+        count = count + i
+    return count
