@@ -1,3 +1,4 @@
+import ast
 
 grid = []
 
@@ -18,10 +19,11 @@ def load_saved_game(grid):
     buildingFile = "savecontent/buildingCount.csv"
     no_buildings = open(buildingFile, "r")
     no_buildings = no_buildings.read()
+    no_buildings = ast.literal_eval(no_buildings)
 
     turnFile = "savecontent/turncount.csv"
     turn_counter = open(turnFile, "r")
-    turn_counter = turn_counter.read()
+    turn_counter = int(turn_counter.read())
 
     return grid, no_buildings, turn_counter
     
