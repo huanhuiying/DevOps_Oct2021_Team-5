@@ -4,8 +4,6 @@
 #US19 - As a user, I want to be able to see the computation of the final score 
 # so that I can understand how the points are calculated. 
 
-grid = []
-
 def loadGrid(grid,filename):
     file = open(filename, "r")
     for line in file:
@@ -13,8 +11,6 @@ def loadGrid(grid,filename):
         grid.append(list(line))
         
     return grid
-
-grid = loadGrid(grid, "game_grid_testus15_19.csv")
 
 def findType(loc, grid):
     column = [4, 10, 16, 22] #A, B, C, D
@@ -70,7 +66,7 @@ def getFACTotalScore(a):
         count = count + i
     return count
 
-def getHSEScore(loc):
+def getHSEScore(loc, grid):
     column = [4, 10, 16, 22] #A, B, C, D
     row = [2, 4, 6, 8]
     c = loc[0]
@@ -95,7 +91,9 @@ def getHSEScore(loc):
 
     count = 0
     for loc in adjLocs:
-        if loc == "FAC":
+        if loc == "   ":
+            count += 0
+        elif loc == "FAC":
             count == 1
             break
         else:
@@ -123,7 +121,7 @@ def getHWYTotalScore(hwyArray):
         count = count + i
     return count
 
-def getShpScore(loc):
+def getShpScore(loc, grid):
     column = [4, 10, 16, 22] #A, B, C, D
     row = [2, 4, 6, 8]
     c = loc[0]
@@ -180,11 +178,14 @@ def printBScore(scoreArray, type):
             if(scoreArray[0] == 0):
                 printstring = "HSE: 0"
             else:
-                printstring = "HSE: 1 = 1"
+                scstr = str(scoreArray[0])
+                printstring = "HSE: " + scstr + " = " + scstr
         else:
+            count = 0
             for i in scoreArray:
+                count +=1
                 ind = scoreArray.index(i)
-                if (ind + 1) == len(scoreArray):
+                if (count) == len(scoreArray):
                     printstring = printstring + str(scoreArray[ind]) + " = " + str(totalscore)
                 else:
                     printstring = printstring + str(scoreArray[ind]) + " + "
@@ -198,11 +199,14 @@ def printBScore(scoreArray, type):
             if(scoreArray[0] == 0):
                 printstring = "FAC: 0"
             else:
-                printstring = "FAC: 1 = 1"
+                scstr = str(scoreArray[0])
+                printstring = "FAC: " + scstr + " = " + scstr 
         else:
+            count = 0
             for i in scoreArray:
+                count += 1
                 ind = scoreArray.index(i)
-                if (ind + 1) == len(scoreArray):
+                if (count) == len(scoreArray):
                     printstring = printstring + str(scoreArray[ind]) + " = " + str(total)
                 else:
                     printstring = printstring + str(scoreArray[ind]) + " + "
@@ -218,11 +222,14 @@ def printBScore(scoreArray, type):
             if(scoreArray[0] == 0):
                 printstring = "SHP: 0"
             else:
-                printstring = "SHP: 1 = 1"
+                scstr = str(scoreArray[0])
+                printstring = "SHP: " + scstr + " = " + scstr
         else:
+            count = 0
             for i in scoreArray:
+                count +=1
                 ind = scoreArray.index(i)
-                if (ind + 1) == len(scoreArray):
+                if (count) == len(scoreArray):
                     printstring = printstring + str(scoreArray[ind]) + " = " + str(totalscore)
                 else:
                     printstring = printstring + str(scoreArray[ind]) + " + "
@@ -236,11 +243,14 @@ def printBScore(scoreArray, type):
             if(scoreArray[0] == 0):
                 printstring = "HWY: 0"
             else:
-                printstring = "HWY: 1 = 1"
+                scstr = str(scoreArray[0])
+                printstring = "HWY: " + scstr + " = " + scstr  
         else:
+            count = 0
             for i in scoreArray:
+                count +=1
                 ind = scoreArray.index(i)
-                if (ind + 1) == len(scoreArray):
+                if (count) == len(scoreArray):
                     printstring = printstring + str(scoreArray[ind]) + " = " + str(total)
                 else:
                     printstring = printstring + str(scoreArray[ind]) + " + "
@@ -256,11 +266,14 @@ def printBScore(scoreArray, type):
             if(scoreArray[0] == 0):
                 printstring = "BCH: 0"
             else:
-                printstring = "BCH: 1 = 1"
+                scstr = str(scoreArray[0])
+                printstring = "BCH: " + scstr + " = " + scstr 
         else:
+            count = 0
             for i in scoreArray:
+                count +=1
                 ind = scoreArray.index(i)
-                if (ind + 1) == len(scoreArray):
+                if (count) == len(scoreArray):
                     printstring = printstring + str(scoreArray[ind]) + " = " + str(totalscore)
                 else:
                     printstring = printstring + str(scoreArray[ind]) + " + "
