@@ -1,5 +1,3 @@
-from numpy import append
-
 
 def save_game(grid):
     fileName = "savecontent/savefile.csv"
