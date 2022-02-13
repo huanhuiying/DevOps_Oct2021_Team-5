@@ -20,7 +20,6 @@ def findType(loc, grid):
             lArray = [c, r]
             if loc == lArray:
                 b = grid[r][c - 1] + grid[r][c] + grid[r][c + 1]
-                print(b)
                 if b == "BCH":
                     return "BCH"
                 elif b == "FAC":
