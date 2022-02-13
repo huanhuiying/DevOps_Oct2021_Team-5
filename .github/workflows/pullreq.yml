@@ -38,10 +38,39 @@ jobs:
           assignees: ${{github.actor}}
           labels: worflow-failed
           body: Workflow failed for commit ${{github.sha}} @ ${{github.ref}}       
-
+          
+    - if : ${{failure()}}
+      name: Test Step for Discord Action
+      id: discordActionFail
+      uses: Poss111/discord-hook-action@v1.6.12
+      with:
+          discord-hook-url: 'https://discord.com/api/webhooks/942123561106165800/TEH4s1YnHBZtsaY-YaVNwgcnnFBCWg864vgk1aYCTcDDmHeiG4It0a_Z92g7Dx_SYAT_'
+          title: 'Unit Test Results'
+          message: 'Unit Tests Failed'
+          message-color: '15548997'
+          
+    - if : ${{success()}}
+      name: Test Step for Discord Action
+      id: discordActionPass
+      uses: Poss111/discord-hook-action@v1.6.12
+      with:
+          discord-hook-url: 'https://discord.com/api/webhooks/942123561106165800/TEH4s1YnHBZtsaY-YaVNwgcnnFBCWg864vgk1aYCTcDDmHeiG4It0a_Z92g7Dx_SYAT_'
+          title: 'Unit Test Results'
+          message: 'Unit Tests Passed'
+          message-color: '5763719'
+          
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action@v1.24
       if: always()
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         files: report.xml
+  
+    - name: Notify discord
+      uses: th0th/notify-discord@v0.4.1
+      if: ${{ always() }}
+      env:
+        DISCORD_WEBHOOK_URL: https://discord.com/api/webhooks/942123561106165800/TEH4s1YnHBZtsaY-YaVNwgcnnFBCWg864vgk1aYCTcDDmHeiG4It0a_Z92g7Dx_SYAT_
+        GITHUB_ACTOR: ${{ github.actor }}
+        GITHUB_JOB_NAME: "Unit Test Status"
+        GITHUB_JOB_STATUS: ${{ job.status }}
