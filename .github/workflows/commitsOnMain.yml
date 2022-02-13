@@ -1,0 +1,30 @@
+name: Commits onto Main
+
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install Libraries
+      run: |
+        pip install flake8 pytest pytest-cov
+        
+    - name: Checkout Own Repo
+      uses: actions/checkout@v2
+      with: 
+        repository: huanhuiying/DevOps_Oct2021_Team-5
+  
+    - name: Notify discord
+      uses: th0th/notify-discord@v0.4.1
+      if: ${{ always() }}
+      env:
+        DISCORD_WEBHOOK_URL: https://discord.com/api/webhooks/942459318530347029/jZqa1-I1KjRlR4c-wpIqJAVC0QExur6JxJTeQHOq-QLRFGG2RCW1Vt5lP6rjxcycOJcu
+        GITHUB_ACTOR: ${{ github.actor }}
+        GITHUB_JOB_NAME: "There is a push on the main!"
+        GITHUB_JOB_STATUS: ${{ job.status }}
