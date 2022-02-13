@@ -148,10 +148,10 @@ def test_locationEmpty():
 #BCH: 3 + 3 + 3 + 1 = 10
 
 @pytest.mark.parametrize("scoreArray, type, scoreResult",
-[([1, 5, 6, 4], "HSE", "HSE: 1 + 5 + 6 + 4 = 16"), 
-([1], "FAC", "FAC: 1 = 1"), ([1, 1, 3], "SHP", "SHP: 1 + 1 + 3 = 5"), 
-([3, 3, 3], "HWY", "HWY: 3 + 3 + 3 = 9"), 
-([3, 3, 3, 1], "BCH", "BCH: 3 + 3 + 3 + 1 = 10")])
+[([1, 5, 6, 4], "HSE", print("HSE: 1 + 5 + 6 + 4 = 16")), 
+([1], "FAC", print("FAC: 1 = 1")), ([1, 1, 3], "SHP", print("SHP: 1 + 1 + 3 = 5")), 
+([3, 3, 3], "HWY", print("HWY: 3 + 3 + 3 = 9")), 
+([3, 3, 3, 1], "BCH", print("BCH: 3 + 3 + 3 + 1 = 10"))])
 
 def test_printBScore(scoreArray, type, scoreResult):
     result = printBScore(scoreArray, type)
@@ -160,8 +160,8 @@ def test_printBScore(scoreArray, type, scoreResult):
 #Total score: 41
 
 @pytest.mark.parametrize("scoreArray, scoreResult",
-[([16, 5, 9, 10], "Total score: 41"), 
-([12, 2, 4, 9], "Total score: 27")])
+[([16, 5, 9, 10], print("Total score: 41")), 
+([12, 2, 4, 9], print("Total score: 27"))])
 
 def test_printTotalScore(scoreArray, scoreResult):
     result = printTotalScore(scoreArray)
