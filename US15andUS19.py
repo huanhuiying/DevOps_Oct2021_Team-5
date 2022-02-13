@@ -47,7 +47,9 @@ def getBCHScore(loc):
         return 1
 
 def getFACScoreArray(count):
-    if(count == 1):
+    if(count == 0): #added code 
+        return 0 #added code 
+    elif(count == 1):
         return 1
     elif(count == 2):
         return [2, 2]
