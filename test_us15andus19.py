@@ -93,7 +93,7 @@ def test_getFACTotalScore(facArray, facResult):
 [([16, 2], 1), ([10, 4], 5), ([16, 4], 6), ([22, 6], 4)])
 
 def test_getHSEScore(location, expectedResult):
-    result = getHSEScore(location)
+    result = getHSEScore(location, grid) #added grid
     assert result == expectedResult
 
 #If Building is HWY
@@ -131,7 +131,7 @@ def test_getHWYTotalScore(hwyArray, hwyResult):
 [([4, 2], 1), ([10, 2], 1), ([10, 6], 3)])
 
 def test_getShpScore(loc, shpResult):
-    result = getShpScore(loc)
+    result = getShpScore(loc, grid)
     assert result == shpResult
 
 #If the Location is empty
