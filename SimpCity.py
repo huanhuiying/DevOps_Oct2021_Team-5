@@ -11,11 +11,16 @@ from US11_US14 import *
 from US22 import *
 from US15andUS19 import *
 from US2_16 import * 
+from US23_US24 import * 
 
 turn_counter = 0
-main_menu_options = ["Start new game", "Load saved game"]
+main_menu_options = ["Start new game", "Load saved game","Show highscores"]
 building_options = ["BCH", "FAC", "HSE", "SHP", "HWY"]
 grid=[]
+
+highscore_file = open("highscore.txt", "r")
+highscore_file = highscore_file.read()
+highscore_dict = ast.literal_eval(highscore_file)
 
 # function for the main menu is initiated 
 def main_menu(main_menu_options):
@@ -400,6 +405,10 @@ while True:
     elif choosen_menu_option == 2:
         print ("Saving")
     
+    #[3]leaderboard
+    elif choosen_menu_option == 3:
+        print_leaderboard(highscore_dict)
+
     #Close application
     elif choosen_menu_option == 0:
         while True:
