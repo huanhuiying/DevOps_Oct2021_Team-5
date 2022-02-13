@@ -108,7 +108,6 @@ while True:
             grid, no_buildings, turn_counter = load_saved_game(grid)
             turn_counter -= 1
         #load game map
-
         while True:
             turn_counter = turn_counter + 1
             while True:
