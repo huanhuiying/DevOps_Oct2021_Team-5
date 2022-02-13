@@ -29,23 +29,3 @@ def save_turnCount(turncount):
     turncount = str(turncount)
     file.write(turncount)
     return turncount
-
-def save_points(hseArray, facArray, shpArray, hwyArray, bchArray):
-    fileName = "savecontent/scoresave.csv"
-    file=open(fileName,'w')
-    # hseArray = list(hseArray)
-    # facArray = list(facArray)
-    # shpArray = list(shpArray)
-    # hwyArray = list(hwyArray)
-    # bchArray = list(bchArray)
-    scoreArray = scoreArray.append(hseArray, facArray, shpArray, hwyArray, bchArray)
-    export_score = []
-    for i in range (len(scoreArray)):
-        temp = ''
-        for j in range(len(scoreArray[i])):
-            temp += scoreArray[i][j]
-        export_score.append(temp)
-    
-    for h in range(len(export_score)):
-        file.write('{}\n'.format(export_score[h]))
-    return scoreArray
