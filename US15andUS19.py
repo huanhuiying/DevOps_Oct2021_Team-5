@@ -1,6 +1,9 @@
 #US15 - As a user, I want to be able to see my current score during each round to see 
 # how much score I have accumulated to plan my next moves. (5)
 
+#US19 - As a user, I want to be able to see the computation of the final score 
+# so that I can understand how the points are calculated. 
+
 grid = []
 
 def loadGrid(grid,filename):
@@ -11,7 +14,7 @@ def loadGrid(grid,filename):
         
     return grid
 
-grid = loadGrid(grid, "game_grid_testus15.csv")
+grid = loadGrid(grid, "game_grid_testus15_19.csv")
 
 def findType(loc, grid):
     column = [4, 10, 16, 22] #A, B, C, D

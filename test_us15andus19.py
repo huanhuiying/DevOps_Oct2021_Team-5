@@ -1,7 +1,7 @@
 #US15 - As a user, I want to be able to see my current score during each round to see 
 # how much score I have accumulated to plan my next moves. (5)
 import pytest
-from US15 import *
+from US15andUS19 import *
 #Create scores list for round (Don't Need Test)
 
 #Create game scores list for all rounds (Don't Need Test)
@@ -21,7 +21,7 @@ from US15 import *
 
 grid = []
 
-file = open("game_grid_testus15.csv", "r")
+file = open("game_grid_testus15_19.csv", "r")
 for line in file:
     line = line.strip('\n')
     grid.append(list(line))
