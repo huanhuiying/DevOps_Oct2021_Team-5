@@ -12,6 +12,7 @@ from US22 import *
 from US15andUS19 import *
 from US2_16 import * 
 from US23_US24 import * 
+from US3 import * 
 
 turn_counter = 0
 main_menu_options = ["Start new game", "Load saved game","Show highscores"]
@@ -253,6 +254,27 @@ while True:
                     printBScore(bchArray, "BCH")
 
                     printTotalScore(tArray)
+                    score = 0
+                    for i in tArray:
+                        score += i
+
+                    position = check_position(score, highscore_dict)
+                    if position < 11:
+                        print("Congratulations! You made the high score board at position " + str(position))
+                    else:
+                        print("Well done! You are at position " + str(position))
+
+                    while True:
+                        name = input("Please enter your name (max 20 chars): ")
+                        if check_name_input(name):
+                            break
+                        else:
+                            print("Name input is more than 20 characters!")
+                            print()
+                            continue
+
+                    highscore_dict = save_score(name, score, highscore_dict)
+                    print_leaderboard(highscore_dict)
                     turn_counter = 0
                     grid = []
                     break
@@ -345,6 +367,8 @@ while True:
                 printTotalScore(tArray)
                 turn_counter = turn_counter - 1
                 continue
+
+ 
             
             #[5] Save game 
             if choosen_configureMenu_option == 5:
