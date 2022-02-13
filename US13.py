@@ -8,4 +8,16 @@ def configMenuVal(option):
             return True
     except ValueError:
         print ("Please choose valid options. ")
-        return True
+        return False
+
+def mainMenuVal(main_option):
+    try:
+        main_option=int(main_option)
+        if main_option==1 or main_option==2 or main_option==0:
+            return False
+        else:
+            print("Please choose valid options.")
+            return True
+    except ValueError:
+        print("Please choose valid options.")
+        return False
