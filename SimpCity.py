@@ -103,10 +103,11 @@ while True:
     if choosen_menu_option == "1" or choosen_menu_option=="2":
         if choosen_menu_option == "1":
             load_file(grid)
+            no_buildings = {"BCH": 8, "FAC": 8, "HSE": 8, "SHP": 8, "HWY": 8}
         elif choosen_menu_option == "2":
             grid, no_buildings, turn_counter = load_saved_game(grid)
+            turn_counter -= 1
         #load game map
-        no_buildings = {"BCH": 8, "FAC": 8, "HSE": 8, "SHP": 8, "HWY": 8}
 
         while True:
             turn_counter = turn_counter + 1

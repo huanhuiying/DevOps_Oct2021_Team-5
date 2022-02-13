@@ -19,8 +19,7 @@ def save_game(grid):
 def save_building(no_buildings):
     buildingFile = "savecontent/buildingCount.csv"
     file=open(buildingFile,'w')
-    for count, value in no_buildings.items():
-        file.write('%s: %s\n' % (count,value))
+    file.write(str(no_buildings))
     return (no_buildings)
 
 def save_turnCount(turncount):
