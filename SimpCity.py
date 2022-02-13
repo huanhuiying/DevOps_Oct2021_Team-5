@@ -9,11 +9,18 @@ from us18confirmexit import *
 from US13 import *
 from US11_US14 import *
 from US22 import *
+from US15andUS19 import *
+from US2_16 import * 
+from US23_US24 import * 
 
 turn_counter = 0
-main_menu_options = ["Start new game", "Load saved game"]
+main_menu_options = ["Start new game", "Load saved game","Show highscores"]
 building_options = ["BCH", "FAC", "HSE", "SHP", "HWY"]
 grid=[]
+
+highscore_file = open("highscore.txt", "r")
+highscore_file = highscore_file.read()
+highscore_dict = ast.literal_eval(highscore_file)
 
 # function for the main menu is initiated 
 def main_menu(main_menu_options):
@@ -169,6 +176,83 @@ while True:
                 grid = place_building(location, building_choice)
 
                 if exitAfterGameEnd(turn_counter):
+                    print("Final layout of Simp City:")
+                    grid_view(grid)
+                    #Integration of Final Score
+                    hseArray = []
+                    facCount = 0
+                    facArray = []
+                    shpArray = []
+                    hwyLocArray = []
+                    hwyScoreArray = []
+                    bchArray = []
+                    #lArray = []
+                    tArray = []
+                    column = [4, 10, 16, 22] #A, B, C, D
+                    row = [2, 4, 6, 8]
+                    for r in row:
+                        for c in column:
+                            loc = [c, r]
+                            b = grid[r][c - 1] + grid[r][c] + grid[r][c + 1]
+                            btype = findType(loc, grid)
+                            if(btype == "HSE"):
+                                score = getHSEScore(loc, grid)
+                                hseArray.append(score)
+                            elif(btype == "FAC"):
+                                facCount = facCount + 1
+                            elif(btype == "SHP"):
+                                score = getShpScore(loc, grid)
+                                shpArray.append(score)
+                            elif(btype == "HWY"):
+                                hwyLocArray.append(loc)
+                            elif(btype == "BCH"):  
+                                score = getBCHScore(loc)
+                                bchArray.append(score)
+                    hseTotalScore = 0
+                    for i in hseArray:
+                        hseTotalScore = hseTotalScore + i
+                    a = getFACScoreArray(facCount)
+                    if (type(a) is int):
+                        if(a == 0):
+                            facTotalScore = 0
+                        else:
+                            facArray = [a]
+                            facTotalScore = getFACTotalScore(facArray)
+                    else:
+                        facArray = a
+                        facTotalScore = getFACTotalScore(facArray)
+                    shpTotalScore = 0
+                    for i in shpArray:
+                        shpTotalScore = shpTotalScore + i
+                    hwyScoreArray = getHWYArray(hwyLocArray)
+                    hwyTotalScore = getHWYTotalScore(hwyScoreArray)
+                    bchTotalScore = 0
+                    for i in bchArray:
+                        bchTotalScore = bchTotalScore + i
+
+                    tArray.append(hseTotalScore)
+                    tArray.append(facTotalScore)
+                    tArray.append(shpTotalScore)
+                    tArray.append(hwyTotalScore)
+                    tArray.append(bchTotalScore)
+
+                    if(len(hseArray) == 0):
+                        hseArray = [0]
+                    if(len(facArray) == 0):
+                        facArray = [0]
+                    if(len(shpArray) == 0):
+                        shpArray = [0]
+                    if(len(hwyScoreArray) == 0):
+                        hwyScoreArray = [0]
+                    if(len(bchArray) == 0):
+                        bchArray = [0]
+                    printBScore(hseArray, "HSE")
+                    printBScore(facArray, "FAC")
+                    printBScore(shpArray, "SHP")
+                    printBScore(hwyScoreArray, "HWY")
+                    printBScore(bchArray, "BCH")
+
+                    printTotalScore(tArray)
                     turn_counter = 0
                     grid = []
                     break
@@ -180,6 +264,93 @@ while True:
             #[3] See remaining buildings
             if choosen_configureMenu_option == 3:
                 show_remaining_building(no_buildings)
+                turn_counter = turn_counter-1
+
+            #[4] See current score
+            if choosen_configureMenu_option == 4:
+                #implement view current score (US15)
+                hseArray = []
+                facCount = 0
+                facArray = []
+                shpArray = []
+                hwyLocArray = []
+                hwyScoreArray = []
+                bchArray = []
+                #lArray = []
+                tArray = []
+                column = [4, 10, 16, 22] #A, B, C, D
+                row = [2, 4, 6, 8]
+                for r in row:
+                    for c in column:
+                        loc = [c, r]
+                        b = grid[r][c - 1] + grid[r][c] + grid[r][c + 1]
+                        btype = findType(loc, grid)
+                        if(btype == "HSE"):
+                            score = getHSEScore(loc, grid)
+                            hseArray.append(score)
+                        elif(btype == "FAC"):
+                            facCount = facCount + 1
+                        elif(btype == "SHP"):
+                            score = getShpScore(loc, grid)
+                            shpArray.append(score)
+                        elif(btype == "HWY"):
+                            hwyLocArray.append(loc)
+                        elif(btype == "BCH"):  
+                            score = getBCHScore(loc)
+                            bchArray.append(score)
+                hseTotalScore = 0
+                for i in hseArray:
+                    hseTotalScore = hseTotalScore + i
+                a = getFACScoreArray(facCount)
+                if (type(a) is int):
+                    if(a == 0):
+                        facTotalScore = 0
+                    else:
+                        facArray = [a]
+                        facTotalScore = getFACTotalScore(facArray)
+                else:
+                    facArray = a
+                    facTotalScore = getFACTotalScore(facArray)
+                shpTotalScore = 0
+                for i in shpArray:
+                    shpTotalScore = shpTotalScore + i
+                hwyScoreArray = getHWYArray(hwyLocArray)
+                hwyTotalScore = getHWYTotalScore(hwyScoreArray)
+                bchTotalScore = 0
+                for i in bchArray:
+                    bchTotalScore = bchTotalScore + i
+
+                tArray.append(hseTotalScore)
+                tArray.append(facTotalScore)
+                tArray.append(shpTotalScore)
+                tArray.append(hwyTotalScore)
+                tArray.append(bchTotalScore)
+
+                if(len(hseArray) == 0):
+                    hseArray = [0]
+                if(len(facArray) == 0):
+                    facArray = [0]
+                if(len(shpArray) == 0):
+                    shpArray = [0]
+                if(len(hwyScoreArray) == 0):
+                    hwyScoreArray = [0]
+                if(len(bchArray) == 0):
+                    bchArray = [0]
+                printBScore(hseArray, "HSE")
+                printBScore(facArray, "FAC")
+                printBScore(shpArray, "SHP")
+                printBScore(hwyScoreArray, "HWY")
+                printBScore(bchArray, "BCH")
+
+                printTotalScore(tArray)
+                turn_counter = turn_counter - 1
+                continue
+            
+            #[5] Save game 
+            if choosen_configureMenu_option == 5:
+                save_game(grid)
+                save_building(no_buildings)
+                save_turnCount(turn_counter)
                 turn_counter = turn_counter-1
 
             #[0] exit from game to main menu
@@ -222,7 +393,6 @@ while True:
                             confirmExitBool = False
                             break
                 
-                print(confirmExitBool)
                 if(confirmExitBool == True):
                     turn_counter = 0
                     grid = []
@@ -235,6 +405,10 @@ while True:
     elif choosen_menu_option == 2:
         print ("Saving")
     
+    #[3]leaderboard
+    elif choosen_menu_option == 3:
+        print_leaderboard(highscore_dict)
+
     #Close application
     elif choosen_menu_option == 0:
         while True:
