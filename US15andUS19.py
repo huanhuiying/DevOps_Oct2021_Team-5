@@ -167,7 +167,6 @@ def locationEmpty():
 #SHP: 1 + 1 + 3 = 5
 #HWY: 3 + 3 + 3 = 9
 #BCH: 3 + 3 + 3 + 1 = 10
-#Total score: 41
 
 def printBScore(scoreArray, type):
     if(type == "HSE"):
@@ -175,54 +174,95 @@ def printBScore(scoreArray, type):
         for i in scoreArray:
             totalscore = totalscore + i
         printstring = "HSE: " 
-        for i in scoreArray:
-            if (scoreArray.index(i) + 1) == len(scoreArray):
-                printstring = printstring + str(scoreArray[0]) + " = " + totalscore
+        if(len(scoreArray) == 1):
+            if(scoreArray[0] == 0):
+                printstring = "HSE: 0"
             else:
-                printstring = printstring + str(scoreArray[0]) + " + "
+                printstring = "HSE: 1 = 1"
+        else:
+            for i in scoreArray:
+                ind = scoreArray.index(i)
+                if (ind + 1) == len(scoreArray):
+                    printstring = printstring + str(scoreArray[ind]) + " = " + str(totalscore)
+                else:
+                    printstring = printstring + str(scoreArray[ind]) + " + "
             
         return print(printstring)
+
     if(type == "FAC"):
         total = getFACTotalScore(scoreArray)
         printstring = "FAC: " 
-        for i in scoreArray:
-            if (scoreArray.index(i) + 1) == len(scoreArray):
-                printstring = printstring + str(scoreArray[0]) + " = " + total
+        if(len(scoreArray) == 1):
+            if(scoreArray[0] == 0):
+                printstring = "FAC: 0"
             else:
-                printstring = printstring + str(scoreArray[0]) + " + "
+                printstring = "FAC: 1 = 1"
+        else:
+            for i in scoreArray:
+                ind = scoreArray.index(i)
+                if (ind + 1) == len(scoreArray):
+                    printstring = printstring + str(scoreArray[ind]) + " = " + str(total)
+                else:
+                    printstring = printstring + str(scoreArray[ind]) + " + "
             
         return print(printstring)
+
     if(type == "SHP"):
         totalscore = 0
         for i in scoreArray:
             totalscore = totalscore + i
         printstring = "SHP: " 
-        for i in scoreArray:
-            if (scoreArray.index(i) + 1) == len(scoreArray):
-                printstring = printstring + str(scoreArray[0]) + " = " + totalscore
+        if(len(scoreArray) == 1):
+            if(scoreArray[0] == 0):
+                printstring = "SHP: 0"
             else:
-                printstring = printstring + str(scoreArray[0]) + " + "
+                printstring = "SHP: 1 = 1"
+        else:
+            for i in scoreArray:
+                ind = scoreArray.index(i)
+                if (ind + 1) == len(scoreArray):
+                    printstring = printstring + str(scoreArray[ind]) + " = " + str(totalscore)
+                else:
+                    printstring = printstring + str(scoreArray[ind]) + " + "
             
         return print(printstring)
+
     if(type == "HWY"):
         total = getHWYTotalScore(scoreArray)
         printstring = "HWY: " 
-        for i in scoreArray:
-            if (scoreArray.index(i) + 1) == len(scoreArray):
-                printstring = printstring + str(scoreArray[0]) + " = " + total
+        if(len(scoreArray) == 1):
+            if(scoreArray[0] == 0):
+                printstring = "HWY: 0"
             else:
-                printstring = printstring + str(scoreArray[0]) + " + "
+                printstring = "HWY: 1 = 1"
+        else:
+            for i in scoreArray:
+                ind = scoreArray.index(i)
+                if (ind + 1) == len(scoreArray):
+                    printstring = printstring + str(scoreArray[ind]) + " = " + str(total)
+                else:
+                    printstring = printstring + str(scoreArray[ind]) + " + "
             
         return print(printstring)
+
     if(type == "BCH"):
         totalscore = 0
         for i in scoreArray:
             totalscore = totalscore + i
         printstring = "BCH: " 
-        for i in scoreArray:
-            if (scoreArray.index(i) + 1) == len(scoreArray):
-                printstring = printstring + str(scoreArray[0]) + " = " + totalscore
+        if(len(scoreArray) == 1):
+            if(scoreArray[0] == 0):
+                printstring = "BCH: 0"
             else:
-                printstring = printstring + str(scoreArray[0]) + " + "
+                printstring = "BCH: 1 = 1"
+        else:
+            for i in scoreArray:
+                ind = scoreArray.index(i)
+                if (ind + 1) == len(scoreArray):
+                    printstring = printstring + str(scoreArray[ind]) + " = " + str(totalscore)
+                else:
+                    printstring = printstring + str(scoreArray[ind]) + " + "
             
         return print(printstring)
+
+#Total score: 41
