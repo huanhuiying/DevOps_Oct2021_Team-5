@@ -266,3 +266,10 @@ def printBScore(scoreArray, type):
         return print(printstring)
 
 #Total score: 41
+def printTotalScore(scoreArray):
+    t = 0
+    for i in scoreArray:
+        t = t + i
+    tstr = str(t)
+    printstr = "Total score: " + tstr
+    return print(printstr)
