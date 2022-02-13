@@ -98,8 +98,8 @@ def exitAfterGameEnd(tc):
 
 # function is called and choosen menu option is return
 while True:
-    choosen_menu_option = int(main_menu(main_menu_options))
-    if choosen_menu_option == 1:
+    choosen_menu_option = (main_menu(main_menu_options))
+    if choosen_menu_option == "1":
         #load game map
         load_file(grid)
         no_buildings = {"BCH": 8, "FAC": 8, "HSE": 8, "SHP": 8, "HWY": 8}
@@ -402,15 +402,15 @@ while True:
                     continue
 
     #load save file
-    elif choosen_menu_option == 2:
+    elif choosen_menu_option == "2":
         print ("Saving")
     
     #[3]leaderboard
-    elif choosen_menu_option == 3:
+    elif choosen_menu_option == "3":
         print_leaderboard(highscore_dict)
 
     #Close application
-    elif choosen_menu_option == 0:
+    elif choosen_menu_option == "0":
         while True:
             exitCfm = input("Exit the application? [Y/N]: ")
             if exitConfirm(exitCfm):
