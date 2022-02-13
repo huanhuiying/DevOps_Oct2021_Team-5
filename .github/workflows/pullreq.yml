@@ -44,7 +44,7 @@ jobs:
       id: discordActionFail
       uses: Poss111/discord-hook-action@v1.6.12
       with:
-          discord-hook-url: 'https://discord.com/api/webhooks/942005914729345025/060oCpG8cOHyWMgIZpkhdw3JSBcD99lWMdLNz0RsbbBpzyNNBxgNtw0zgHQ-k388QMyB'
+          discord-hook-url: 'https://discord.com/api/webhooks/942123561106165800/TEH4s1YnHBZtsaY-YaVNwgcnnFBCWg864vgk1aYCTcDDmHeiG4It0a_Z92g7Dx_SYAT_'
           title: 'Unit Test Results'
           message: 'Unit Tests Failed'
           message-color: '15548997'
@@ -54,7 +54,7 @@ jobs:
       id: discordActionPass
       uses: Poss111/discord-hook-action@v1.6.12
       with:
-          discord-hook-url: 'https://discord.com/api/webhooks/942005914729345025/060oCpG8cOHyWMgIZpkhdw3JSBcD99lWMdLNz0RsbbBpzyNNBxgNtw0zgHQ-k388QMyB'
+          discord-hook-url: 'https://discord.com/api/webhooks/942123561106165800/TEH4s1YnHBZtsaY-YaVNwgcnnFBCWg864vgk1aYCTcDDmHeiG4It0a_Z92g7Dx_SYAT_'
           title: 'Unit Test Results'
           message: 'Unit Tests Passed'
           message-color: '5763719'
@@ -70,7 +70,7 @@ jobs:
       uses: th0th/notify-discord@v0.4.1
       if: ${{ always() }}
       env:
-        DISCORD_WEBHOOK_URL: https://discord.com/api/webhooks/941988093379104770/fxpl-UsFAAWYG4pS54WnKlVJAUdfynXAbvuksQrr9YOMhIa4r_t39PaciGF7qbzt1qBM
+        DISCORD_WEBHOOK_URL: https://discord.com/api/webhooks/942123561106165800/TEH4s1YnHBZtsaY-YaVNwgcnnFBCWg864vgk1aYCTcDDmHeiG4It0a_Z92g7Dx_SYAT_
         GITHUB_ACTOR: ${{ github.actor }}
         GITHUB_JOB_NAME: "Unit Test Status"
         GITHUB_JOB_STATUS: ${{ job.status }}
