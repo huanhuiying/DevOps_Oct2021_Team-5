@@ -10,6 +10,7 @@ from US13 import *
 from US11_US14 import *
 from US22 import *
 from US15andUS19 import *
+from US2_16 import * 
 
 turn_counter = 0
 main_menu_options = ["Start new game", "Load saved game"]
@@ -339,6 +340,13 @@ while True:
                 printTotalScore(tArray)
                 turn_counter = turn_counter - 1
                 continue
+            
+            #[5] Save game 
+            if choosen_configureMenu_option == 5:
+                save_game(grid)
+                save_building(no_buildings)
+                save_turnCount(turn_counter)
+                turn_counter = turn_counter-1
 
             #[0] exit from game to main menu
             elif choosen_configureMenu_option ==0:
