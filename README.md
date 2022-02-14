@@ -29,6 +29,30 @@
     <li>Hui Ying - US21
     <li>Amanda - US5 & US9
   </ul>
+  </br>
+  <strong><u>Sprint 3: 27th December - 19th Janurary</u></strong> </br>
+  <ul>
+    <li>Megan - US17, US18
+    <li>Claris - US7, us8
+    <li>Hui Ying - Test Cases: US5, US7, US8, US10, US12, US17, US18
+    <li>Amanda - US10, US12
+  </ul>
+  </br>
+  <strong><u>Sprint 4: 20th Janurary - 7th Feburary</u></strong> </br>
+  <ul>
+    <li>Megan - US15, US19 > moved to sprint 5
+    <li>Claris - US13, US22
+    <li>Hui Ying - Test Cases: US4, US11, US13, US14, US15, US19, US22
+    <li>Amanda - US11, US14
+  </ul>
+  </br>
+  <strong><u>Sprint 5: 8th Feburary - 14th Feburary</u></strong> </br>
+  <ul>
+    <li>Megan - US15, US19
+    <li>Claris - US2, US3, US16
+    <li>Hui Ying - Test Cases: US2, US3, US16, US23, US24, US15, US19
+    <li>Amanda - US23, US24
+  </ul>
   
   <h2>Links</h2>
   <a href="https://docs.google.com/spreadsheets/d/1tX3el3ndlgzSFnqHNxrp61wxTIDeNvBg638vxIcpcmc/edit?usp=sharing">Link to Project Schedule</a> </br>
@@ -38,6 +62,8 @@
   <h2>Sprint Retrospectives</h2>
   <a href="https://docs.google.com/document/d/1HH2GRwInOwWczK_qj-3854chnIlAdsrY/edit?usp=sharing&ouid=112796443500104222435&rtpof=true&sd=true">Link to Sprint 1 Retrospective</a> </br>
   <a href="https://docs.google.com/document/d/1yt4ywSWMIp6nAhfCosxCW-nYPpaOqdlr/edit?usp=sharing&ouid=112796443500104222435&rtpof=true&sd=true">Link to Sprint 2 Retrospective</a> </br>
+  <a href="https://docs.google.com/document/d/1Y_kGJ68Eov_hEi6X0ayV1ED3stm4pRAD/edit?usp=sharing&ouid=112796443500104222435&rtpof=true&sd=true">Link to Sprint 3 Retrospective</a> </br>
+  <a href="https://docs.google.com/document/d/1TYvgUVUGXYZpXd5SSUdzD4GEftTXGo-s/edit?usp=sharing&ouid=112796443500104222435&rtpof=true&sd=true">Link to Sprint 4 Retrospective</a> </br>
 
   <h2>Team's Approach</h2>
   <img width = "800" src = "https://github.com/huanhuiying/DevOps_Oct2021_Team-5/blob/main/images/workflow.jpg">
@@ -58,12 +84,13 @@ The project will be done over the span of 6 sprints, where each sprint will last
 
 
 
-  <h2>Different Requirements of the Assignment</h2>
+  <h2>Different Requirements of the Assignment - As of Sprint 5</h2>
   <ol>
   <li>Display Main Menu</li>
   1.1 Start New Game</br>
   1.2 Load Saved Game</br>
-  1.3 Exit Game </p>
+  1.3 Show Highscores</br>
+  1.4 Exit Game </p>
   </br>
   
   <li>Playing the Game</li>
